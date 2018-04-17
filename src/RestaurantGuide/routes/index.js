@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* search page */
+router.get('/search', function(req, res, next) {
+    res.render('search', { title: 'COM3504' });
+});
 module.exports = router;
