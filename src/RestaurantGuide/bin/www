@@ -5,9 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('restaurantguide:server');
+var debug = require('debug')('Restaurant-Guide:server');
 var http = require('http');
-
+var database= require('../databases/restaurants')
 /**
  * Get port from environment and store in Express.
  */
