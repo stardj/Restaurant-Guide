@@ -24,4 +24,8 @@ router.get('/insert', function(req, res, next) {
 router.post('/insert', restaurant.insert);
 
 
+/* search page */
+router.get('/search', function(req, res, next) {
+    res.render('search', { title: 'COM3504' });
+});
 module.exports = router;
