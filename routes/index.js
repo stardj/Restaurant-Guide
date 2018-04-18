@@ -15,12 +15,12 @@ mongoose.connect(DB);
 //11111
 /* GET home page. */
 router.get('/index', function(req, res, next) {
-    //  res.render('index', { title: 'Express' });
+     res.render('index', { title: 'Express' });
     // if(req.query.search){
     //     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
     //     Restaurant.find({name: regex}, function (err, restaurants) {
     //         if (err) {
-    //             res.send('error has occured');
+                res.send('error has occured');
     //         } else {
     //             //res.render('/index', {DB:restaurants});
     //             console.log(restaurants);
@@ -31,24 +31,24 @@ router.get('/index', function(req, res, next) {
     //    // const regex = new RegExp(escapeRegex(req.query.search), 'gi');
 
         //下面是多项checkbox查询
-        Restaurant.find({$or:[{class_name:"Chinese"},{special_name:"Curry"},{post_code:"S3 7HB"}]}, function (err, restaurants) {
-            if (err) {
-                res.send('error has occured');
-            } else {
-                console.log(restaurants);
-                res.json(restaurants);
-            }
-        });
-
-        //下面是模糊查询，和上面冲突，分别调用
-        Restaurant.find({class_name:{$regex:"chi",$options:"$i"}}, function (err, restaurants) {
-            if (err) {
-                res.send('error has occured');
-            } else {
-                console.log(restaurants);
-                res.json(restaurants);
-            }
-        });
+        // Restaurant.find({$or:[{class_name:"Chinese"},{special_name:"Curry"},{post_code:"S3 7HB"}]}, function (err, restaurants) {
+        //     if (err) {
+        //         res.send('error has occured');
+        //     } else {
+        //         console.log(restaurants);
+        //         res.json(restaurants);
+        //     }
+        // });
+        //
+        // //下面是模糊查询，和上面冲突，分别调用
+        // Restaurant.find({class_name:{$regex:"chi",$options:"$i"}}, function (err, restaurants) {
+        //     if (err) {
+        //         res.send('error has occured');
+        //     } else {
+        //         console.log(restaurants);
+        //         res.json(restaurants);
+        //     }
+        // });
 
     // }
     // if(req.query.search){
@@ -74,6 +74,7 @@ router.get('/index', function(req, res, next) {
     // }
 });
 
+router.post('/index', restaurant.finding);
 // router.post('/index', function (req, res, next){
 //     Restaurant.find({})
 //         .exec(function (err, Restaurant) {

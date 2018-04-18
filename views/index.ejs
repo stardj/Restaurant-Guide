@@ -9,12 +9,15 @@
   </head>
   <body>
     <h1><%= title %></h1>
-           <form action = "/index" method = "GET" class = "form-inline">
-                <div class = "form-group">
-                    <input type = "text" name = "search" placeholder = "Search ... " class = "form-control">
-                    <input type = "submit" value = "Search" class = "btn btn-default">
-                </div>
-            </form>
+
+
+    <form id=“xForm" onsubmit="onSubmit('/index')">
+        <p><label for='restaurantname'>Restaurant name:</label>
+        <input type="text" name="restaurantname" id="restaurantname" value="Ma Hua"></p>
+
+        <p><input type="submit" name="g" value="Search" id="g"></p>
+    </form>
+  <div id="results" style="margin-top:30px"></div>
 
   </body>
 </html>
