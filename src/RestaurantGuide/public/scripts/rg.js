@@ -1,8 +1,8 @@
-$(function() {
-    $('.item_line').hover( function(){
+$(function () {
+    $('.item_line').hover(function () {
             $(this).css('box-shadow', '0px 0px 15px -5px black');
         },
-        function(){
+        function () {
             $(this).css('box-shadow', '');
         });
 
@@ -11,7 +11,7 @@ $(function() {
         var geolocation = window.navigator.geolocation;
         geolocation.getCurrentPosition(
             returnSuccess, returnError, {
-                timeout : 6000
+                timeout: 6000
             });
     } else {
         info.innerHTML = "Your broswer doesn't support map function. Please change to other browsers.";
@@ -30,13 +30,14 @@ $(function() {
                 break;
         }
     }
+
     function returnSuccess(position) {
         var lat = position.coords.latitude;
         var long = position.coords.longitude;
         var latLng = new google.maps.LatLng(lat, long);
         var locations = [
-            ['Firepit',53.381021, -1.476363, 1],
-            ['Hot Chilli', 53.385822, -1.479223 , 2]
+            ['Firepit', 53.381021, -1.476363, 1],
+            ['Hot Chilli', 53.385822, -1.479223, 2]
         ];
         var markers = [];
         var map = new google.maps.Map(document.getElementById("map"), {
@@ -54,8 +55,8 @@ $(function() {
                 label: String(locations[i][3])
             });
             markers.push(marker);
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
                     mapInfoWindow.setContent(locations[i][0]);
                     mapInfoWindow.open(map, marker);
                 }
@@ -66,7 +67,7 @@ $(function() {
 
     }
 
-    function drawCricleRange(latLng, map){
+    function drawCricleRange(latLng, map) {
         var radius = parseInt($("input[name='distance']").val());
         var populationOptions = {
             strokeColor: 'blue',

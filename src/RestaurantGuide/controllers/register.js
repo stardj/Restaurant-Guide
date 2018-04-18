@@ -31,7 +31,7 @@ exports.insert = function (req, res) {
     if (userData == null) {
         res.status(403).send('No data sent!')
     }
-    console.log(JSON.stringify(userData))
+    console.log(JSON.stringify(userData));
     if (userData.userpassword != userData.confirmpw) {
         res.status(403).send('password incorrect!')
     }
