@@ -13,8 +13,8 @@ router.get('/index', function(req, res, next) {
   res.render('index', { title: 'Restaurant Guide Search' });
 });
 
-router.post('/index', restaurant.getAge);
-
+// router.post('/index', restaurant.getAge);
+router.post('/index', restaurant.finding);
 
 /* GET home page. */
 router.get('/insert', function(req, res, next) {

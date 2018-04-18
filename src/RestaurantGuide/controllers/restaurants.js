@@ -6,9 +6,18 @@ exports.getAge = function (req, res) {
         res.status(403).send('No data sent!')
     }
     try {
-        Restaurant.find({first_name: userData.firstname, family_name: userData.lastname, restaurant_name: userData.restaurantname, class_name: userData.classname,
-                        special_name: userData.specialname, locate_longitude: userData.locatelongitude, locate_latitude: userData.locatelatitude, post_code: userData.postcode,
-                        rank_score: userData.rank, level_score: userData.level},
+        Restaurant.find({
+                first_name: userData.firstname,
+                family_name: userData.lastname,
+                restaurant_name: userData.restaurantname,
+                class_name: userData.classname,
+                special_name: userData.specialname,
+                locate_longitude: userData.locatelongitude,
+                locate_latitude: userData.locatelatitude,
+                post_code: userData.postcode,
+                rank_score: userData.rank,
+                level_score: userData.level
+            },
             'first_name family_name dob age class special',
             function (err, restaurants) {
                 if (err)
@@ -33,6 +42,21 @@ exports.getAge = function (req, res) {
     } catch (e) {
         res.status(500).send('error ' + e);
     }
+}
+
+exports.finding = function (req, res) {
+    var userData = req.body;
+
+    Restaurant.find({restaurant_name: {$regex: userData.restaurantname, $options: "$i"}}, function (err, restaurant) {
+        if (err) {
+            res.send('error has occured');
+        } else {
+            // console.log(restaurant);
+            // res.json(restaurant);
+            res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.stringify(restaurant));
+        }
+    });
 }
 
 
