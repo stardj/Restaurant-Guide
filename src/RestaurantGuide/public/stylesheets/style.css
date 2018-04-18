@@ -22,3 +22,6 @@ body{
   height: 200px;
   width: 100%;
 }
+.result_label{
+  padding-left: 30px;
+}
