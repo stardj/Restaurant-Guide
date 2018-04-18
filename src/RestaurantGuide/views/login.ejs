@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+
+</head>
+<body>
+<h1><%= title %></h1>
+
+
+<form id=“xForm" onsubmit="onSubmit()">
+    <label for='useraccount'>account:</label>
+    <input type="text" name="useraccount" id="useraccount" value="">
+    <p><label for='userpassword'>password:</label>
+        <input type="password" name="userpassword" id="userpassword" value="">
+    </p>
+    <p><input type="submit" name="g" value="Submit" id="g"></p>
+</form>
+<div id="results" style="margin-top:30px"></div>
+
+</body>
+</html>
