@@ -1,0 +1,17 @@
+.col-center-block {  
+		float: none;  
+		display: block;  
+		margin-left: auto;  
+		margin-right: auto;  
+}  
+#player {
+	display: none;
+}
+#snapshot {
+	display: none;	
+	cursor: pointer;
+}
+
+#map_canvas {
+	display: none;
+}
