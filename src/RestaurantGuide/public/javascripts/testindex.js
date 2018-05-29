@@ -5,7 +5,7 @@ function ajaxQuery(url, data) {
         dataType: 'json',
         type: 'POST',
         success: function (dataR) {
-            document.getElementById('testTMP').innerHTML = builddocument(dataR);
+            document.getElementById('testTMP').innerHTML = parserResult(dataR);
         },
         error: function (xhr, status, error) {
             alert('Error: ' + error.message);
@@ -51,10 +51,10 @@ function builddocument(data) {
     var infosmall3 = document.createElement("SMALL");
 
     infoa.setAttribute("href", "detail.html");
-    var infoh5text = document.createTextNode("data.restaurant_name");// restaurant_name
+    var infoh5text = document.createTextNode("data.restaurant_name " + data.post_code);// restaurant_name
     infoh5.appendChild(infoh5text);
     infoa.appendChild(infoh5);
-    infoimg.setAttribute("src","images/rank4.jpg");//rank
+    infoimg.setAttribute("src", "images/rank4.jpg");//rank
     infoimg.setAttribute("class", "img-rounded");
 
     var text1 = document.createTextNode("233333 reviews");// reviews number
@@ -76,7 +76,19 @@ function builddocument(data) {
     rootNode.appendChild(imgNode);
     rootNode.appendChild(infoNode);
 
-    return rootNode.innerHTML;
+    return rootNode;
+}
+
+function parserResult(dataR) {
+
+    var output = document.createElement("DIV");
+    // output.setAttribute("class", "col-md-12");
+
+    dataR.forEach(function (dataR) {
+        output.appendChild(builddocument(dataR));
+    });
+
+    return output.innerHTML;
 }
 
 // function createDiv(data) {
