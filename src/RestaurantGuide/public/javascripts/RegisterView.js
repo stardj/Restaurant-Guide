@@ -14,7 +14,7 @@ function ajaxQuery(url, data) {
     });
 }
 
-function onSubmitLogin(url) {
+function onSubmitSignUp(url) {
     var formArray = $("form").serializeArray();
     var data = {};
     for (index in formArray) {
@@ -30,7 +30,7 @@ function iCheck(dataR) {
 
     if (dataR.value == "Ture") {
         alert("Success!");
-        document.getElementById('test').innerHTML = "Welcome to the world!";
+        // document.getElementById('test').innerHTML = "Welcome to the world!";
     } else {
         alert("Incorrect account or password!")
     }

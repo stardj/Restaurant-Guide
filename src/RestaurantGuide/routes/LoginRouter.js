@@ -6,9 +6,9 @@ var login = require('../controllers/LoginController');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('login', {title: 'Log in'});
+    res.render('login', {title: 'Log In'});
 });
 
-router.post('/', login.loginCheck);
+router.post('/', login.login);
 
 module.exports = router;

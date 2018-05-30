@@ -9,7 +9,7 @@ var index = require('./routes/index');
 // var testindex = require('./routes/testindex');
 var users = require('./routes/users');
 var login = require('./routes/LoginRouter');
-var register = require('./routes/register');
+var register = require('./routes/RegisterRouter');
 var test_distance = require('./routes/test_distance');
 var search = require('./routes/SearchRouter');
 
