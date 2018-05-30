@@ -81,10 +81,13 @@ $(function () {
         var lat = position.coords.latitude;
         var long = position.coords.longitude;
         var latLng = new google.maps.LatLng(lat, long);
+        /***************************************************************/
+        //TODO
         var locations = [
             ['Firepit', 53.381021, -1.476363, 1],
             ['Hot Chilli', 53.385822, -1.479223, 2]
         ];
+        /***************************************************************/
         var markers = [];
         var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 12,

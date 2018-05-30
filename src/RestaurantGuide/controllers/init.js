@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Character = require('../models/restaurants');
+var Character = require('../models/Restaurant');
 var Character1 = require('../models/UserInfo');
 
 

@@ -13,5 +13,4 @@ router.get('/', function (req, res, next) {
 
 router.post('/', register.insert);
 
-
 module.exports = router;

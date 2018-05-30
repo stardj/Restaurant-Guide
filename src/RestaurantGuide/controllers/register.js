@@ -24,7 +24,7 @@ exports.login = function (req, res) {
         res.status(500).send('error ' + e);
     }
 
-}
+};
 
 exports.insert = function (req, res) {
     var userData = req.body;
@@ -53,4 +53,4 @@ exports.insert = function (req, res) {
     } catch (e) {
         res.status(500).send('error ' + e);
     }
-}
+};
