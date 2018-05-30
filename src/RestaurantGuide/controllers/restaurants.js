@@ -1,4 +1,4 @@
-var Restaurant = require('../models/restaurants');
+var Restaurant = require('../models/Restaurant');
 
 exports.getAge = function (req, res) {
     var userData = req.body;
@@ -80,10 +80,6 @@ exports.finding = function (req, res) {
         }
     });
 };
-
-function parser4Json(data) {
-
-}
 
 
 exports.insert = function (req, res) {

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var Character = require('../models/Restaurant');
-var Character1 = require('../models/UserInfo');
+var Character = require('../models/RestaurantsModel');
+var Character1 = require('../models/UserInfoModel');
 
 
 exports.init= function() {

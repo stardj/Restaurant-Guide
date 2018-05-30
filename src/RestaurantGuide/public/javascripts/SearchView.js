@@ -5,7 +5,8 @@ function ajaxQuery(url, data) {
         dataType: 'json',
         type: 'POST',
         success: function (dataR) {
-            document.getElementById('testTMP').innerHTML = parserResult(dataR);
+            document.getElementById("SearchResult").innerHTML = parserResult(dataR);
+            // document.getElementById("result").innerHTML = "This is a test";
         },
         error: function (xhr, status, error) {
             alert('Error: ' + error.message);
@@ -13,7 +14,7 @@ function ajaxQuery(url, data) {
     });
 }
 
-function onSubmitTest(url) {
+function onSubmitSearch(url) {
     var formArray = $("form").serializeArray();
     var data = {};
     for (index in formArray) {
@@ -82,7 +83,7 @@ function builddocument(data) {
 function parserResult(dataR) {
 
     var output = document.createElement("DIV");
-    // output.setAttribute("class", "col-md-12");
+    output.setAttribute("class", "col-md-12");
 
     dataR.forEach(function (dataR) {
         output.appendChild(builddocument(dataR));

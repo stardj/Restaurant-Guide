@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require("body-parser");
 
 
-var restaurant = require('../controllers/restaurants');
+var searchController = require('../controllers/SearchController');
 var initDB = require('../controllers/init');
 initDB.init();
 
@@ -11,9 +11,9 @@ initDB.init();
 /* GET home page. */
 router.get('/', function (req, res, next) {
     var data = {title: 'Restaurant Guide Search'};
-    res.render('testindex', data);
+    res.render('search', data);
 });
 
-router.post('/', restaurant.finding);
+router.post('/', searchController.finding);
 
 module.exports = router;
