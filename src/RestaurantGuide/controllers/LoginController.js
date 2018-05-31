@@ -39,20 +39,21 @@ exports.login = function (req, res) {
             function (err, userinfo) {
                 if (err)
                     res.status(500).send('Invalid data!');
-                // var userinfo = null;
                 console.log(userinfo);
                 if (userinfo.length == 1) {
+
+                    req.session.login == "1";// set session for login status
+                    req.session.username = userData.username;// put username in session
+
                     console.log("Ture");
                     res.setHeader('Content-Type', 'application/json');
-                    res.status(200).send({value: "Ture"});
+                    res.status(200).send({value: "Ture", username: req.session.username});
                 } else {
                     console.log("False");
                     res.setHeader('Content-Type', 'application/json');
                     res.status(200).send({value: "False"});
                 }
 
-                // res.setHeader('Content-Type', 'application/json');
-                // res.send(JSON.stringify(userinfo));
             });
     } catch (e) {
         res.status(500).send('error ' + e);
