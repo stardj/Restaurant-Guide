@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var UserInfoModel = new Schema(
+var UserInfoSchema = new Schema(
     {
         useraccount: {type: String},            //useraccount
         userpassword: {type: String},           //userpassword
@@ -11,6 +11,6 @@ var UserInfoModel = new Schema(
     }
 );
 
-var UserInfoModel = mongoose.model('UserInfoModel', UserInfoModel);
+var UserInfoModel = mongoose.model('UserInfo', UserInfoSchema, 'UserInfo');//avoid adding 's' to model
 
 module.exports = UserInfoModel;

@@ -1,7 +1,8 @@
-var Restaurant = require('../models/RestaurantsModel');
+var Restaurant = require('../models/RestaurantModel');
 
 exports.finding = function (req, res) {
     var userData = req.body;
+    console.log(userData);
     Restaurant.find({restaurant_name: {$regex: userData.restaurantname, $options: "$i"}}, function (err, restaurant) {
         if (err) {
             res.send('error has occured');

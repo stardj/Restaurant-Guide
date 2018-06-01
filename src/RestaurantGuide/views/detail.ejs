@@ -13,7 +13,6 @@
     <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/rest.css" rel="stylesheet">
 
-
 </head>
 
 <body>
@@ -39,44 +38,60 @@
         <div class="col-xs-8 col-md-8 col-center-block">
 
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <h2>Fire Pit</h2>
-                </div>
+                <div id="restaurantNameInfo"></div>
             </div>
+            <!--<div class="row">-->
+                <!--<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">-->
+                    <!--<h2>Fire Pit</h2>-->
+                <!--</div>-->
+            <!--</div>-->
 
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <div class="float-left"><img src="images/rank3.JPG"/></div>
-                    <div class="float-left small font-italic mt-1" >2333 reviews</div>
-                </div>
+                <div id="reviewInfo" />
             </div>
+            <!--<div class="row">-->
+                <!--<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">-->
+                    <!--<div class="float-left"><img src="images/rank3.JPG"/></div>-->
+                    <!--<div class="float-left small font-italic mt-1" >2333 reviews</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
             <div class="row col-center-block ">
-                <div class="col-md-6 col-lg-6 col-xl-6 p-1">
-                    <p>Type of restaurant: <a href="#">xxx</a>, <a href="#">xxx</a>, <a href="#">xxx</a> <br></p>
-                    <p>Type of cuisine: <a href="#">xxx</a>, <a href="#">xxx</a>, <a href="#">xxx</a><br></p>
-                    <p>Address: xxxxxxx<br></p>
-                    <p>Tel: xxxxxx<br></p>
-                    <p>Postcode: xxxxx <br></p>
-                </div>
+                <div id="restaurantInfo" />
             </div>
+            <!--<div class="row col-center-block ">-->
+                <!--<div class="col-md-6 col-lg-6 col-xl-6 p-1">-->
+                    <!--<p>Type of restaurant: <a href="#">xxx</a>, <a href="#">xxx</a>, <a href="#">xxx</a> <br></p>-->
+                    <!--<p>Type of cuisine: <a href="#">xxx</a>, <a href="#">xxx</a>, <a href="#">xxx</a><br></p>-->
+                    <!--<p>Address: xxxxxxx<br></p>-->
+                    <!--<p>Tel: xxxxxx<br></p>-->
+                    <!--<p>Postcode: xxxxx <br></p>-->
+                <!--</div>-->
+            <!--</div>-->
+
             <!-- picture -->
             <div class="row col-center-block mt-3 border-top">
                 <div class="col-md-4 col-lg-4 col-xl-4 p-1 pt-3">
                     Know us:
                 </div>
             </div>
+
+            <!--<div class="row">-->
+                <!--<div id="imgInfo"></div>-->
+            <!--</div>-->
             <div class="row">
-                <div class="col-md-6 col-lg-6 column">
-                    <div class="p-2 border w-100">
-                        <img src="images/bg_index.jpg" class="img-fluid"/>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 column">
-                    <div class="p-2 border w-100">
-                        <img src="images/bg_index.jpg" class="img-fluid"/>
-                    </div>
-                </div>
+                <div id="imgInfo1" class="col-md-6 col-lg-6 column"></div>
+                <div id="imgInfo2" class="col-md-6 col-lg-6 column"></div>
+                <!--<div class="col-md-6 col-lg-6 column">-->
+                    <!--<div class="p-2 border w-100">-->
+                        <!--<img src="images/bg_index.jpg" class="img-fluid"/>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-6 col-lg-6 column">-->
+                    <!--<div class="p-2 border w-100">-->
+                        <!--<img src="images/bg_index.jpg" class="img-fluid"/>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
 
             <!-- map -->
@@ -116,6 +131,7 @@
                     </div>
                 </div>
 
+
                 <div class="row col-center-block p-2 mb-2 w-100 border rounded shadow-textarea scrollable flex-wrap" style="height:200px; ">
                     <div class="mt-0 border-top">Jack Noran : <i>"I like the food there, especially the burger, beer also good!"</i></div>
                     <div class="mt-1">
@@ -127,11 +143,13 @@
                     <div class="mt-1 border-top">Tom Cat : <i>"Waiters are very polite! Enjoy the food there!"</i></div>
                     <div class="mt-1 border-top">Kitney Hall : <i>"Foods are ok, but wait for a long time..."</i></div>
                 </div>
+
+
                 <div class="form-group shadow-textarea">
                     <textarea class="form-control z-depth-1 p-2 m-0" required id="taComment" rows="3" placeholder="Write your comments here..."></textarea>
                 </div>
                 <div class="row m-1 float-right">
-                    <button type="submit" class="btn btn-primary btn-sm">Comment</button>
+                    <button id="commentBtn" type="submit" class="btn btn-primary btn-sm">Comment</button>
                 </div>
                 <div class="row mt-3 col-center-block">
                     <label for="camera">Upload an image: </label>
