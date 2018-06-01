@@ -6,8 +6,11 @@
 
 var app = require('../app');
 var debug = require('debug')('Restaurant-Guide:server');
-var http = require('http');
+//var http = require('http');
+var https = require('https');
 var database= require('../databases/restaurants')
+var fs = require('fs-extra');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -15,11 +18,16 @@ var database= require('../databases/restaurants')
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+var options = {
+    key: fs.readFileSync('../private_access/ca.key'),
+    cert: fs.readFileSync('../private_access/ca.crt')
+}
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+//var server = http.createServer(app);
+var server = https.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
