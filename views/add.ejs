@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%= title %></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/add.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-white static-top">
+        <div class="container-fluid">
+            <div class="container w-auto">
+                <a class="navbar-brand" href="index.html"><h2><%= title %></h2></a>
+            </div>
+            <div class="nav navbar-nav navbar-right ">
+                <a class="btn btn-primary" href="#">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+	<div class="container border-top border-bottom">
+		<div class="row m-5">
+			<div class="col-xs-8 col-md-8 col-center-block">
+				<div class="row">
+
+					<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<h2>Create Restaurant</h2>
+					</div>
+				</div>
+				<div class="row col-center-block ">
+				<form id="xForm" >
+					<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+						<form id="search_form" class="form-horizontal" role="form">
+							<!-- Name-->
+
+							<div class="form-group row">
+								<div class="col-6">
+									<label class="control-label font-weight-bold" for="name">Restaurant Name:</label>
+									<div class="controls mb-1">
+										<input id="name" class="form-control" type="text" placeholder="" required>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-6">
+									<label class="control-label font-weight-bold" for="telephone">Telephone:</label>
+									<div class="controls mb-1">
+										<input id="telephone" class="form-control" type="text" placeholder="" required>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-12">
+									<label class="control-label font-weight-bold" for="address">Address:</label>
+									<div class="controls mb-1">
+										<input id="address" class="form-control" type="text" placeholder="" required>
+										<div id="addInfo" class="invalid-feedback">Please provide an address.</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<input id="btnFindMap" class="btn btn-primary btn-sm mt-1 mb-1" a type="button" value="Find it">
+									<div id="map_canvas" style="z-index:1; height: 300px"></div>
+								</div>
+							</div>
+						</form>
+							<div class="form-group row">
+								<div class="col-6">
+									<label class="control-label font-weight-bold" for="lat">Latitude:</label>
+									<div class="controls mb-1">
+										<input name="lat" id="lat" type="text" class="form-control" readonly>
+									</div>
+								</div>
+								<div class="col-6">
+									<label class="control-label font-weight-bold" for="long">Longitude:</label>
+									<div class="controls mb-1">
+										<input name="long" id="long" type="text" class="form-control" readonly>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="font-weight-bold">Type of Restaurant</label><!-- Type of Restaurant -->
+								<div class="form-control">
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfRestaurant" value="1"/> Restaurants </label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfRestaurant" value="2"/> Bakeries </label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfRestaurant" value="3"/> Pubs & Bars </label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfRestaurant" value="4"/> Dessert </label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfRestaurant" value="5"/> Coffee & Tea </label>
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="font-weight-bold">Type of Cuisine</label><!-- Type of Cuisine -->
+								<div class="form-control">
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfCuisine" value="1"/> British </label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfCuisine" value="2"/> Italian</label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfCuisine" value="3"/> Chinese</label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfCuisine" value="4"/> Japanses</label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfCuisine" value="5"/> Indian</label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfCuisine" value="6"/> Fast Food</label>
+									</label>
+									<label class="checkbox inline m-1">
+										<label><input type="checkbox" name="typeOfCuisine" value="7"/> Vegetarian</label>
+									</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-12 text-center m-3">
+									<button type="reset" class="btn btn-default">Reset Form</button>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6 col-lg-6">
+									<label for="camera1">Upload picture one: </label>
+									<div class="p-2 border w-100">
+										<img id="frame1" src="" class="img-fluid"/>
+									</div>
+									<div class="col-center-block mt-2">
+										<input class="small" type="file" accept="image/*" capture="camera1" id="camera1">
+										<input id="btnClear1" type="button" class="btn btn-dark btn-sm" value="Clear">
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6">
+									<label for="camera1">Upload picture two: </label>
+									<div class="p-2 border w-100">
+										<img id="frame2" src="" class="img-fluid"/>
+									</div>
+									<div class="col-center-block mt-2">
+										<input class="small" type="file" accept="image/*" capture="camera2" id="camera2">
+										<input id="btnClear2" type="button" class="btn btn-dark btn-sm" value="Clear">
+									</div>
+								</div>
+							</div>
+
+							<div class="row col-center-block border-top mt-3">
+								Enable your camera to take a photo:
+								<input type='button' id="btnEnable" class="btn btn-primary btn-sm ml-1 mt-2" value="Enable"></input>
+								<input type='button' id="btnCapture" class="btn btn-primary btn-sm ml-1 mt-2" value="Capture"></input>
+								<input type='button' id="btnClearPhoto"  class="btn btn-dark btn-sm ml-1 mt-2" value="Clear"></input>
+								<button type='submit' id = "addTMP" name = "addTMP"  class="btn btn-primary ml-4 mt-2" >Submit</button>
+							</div>
+							<div class="row col-center-block mt-3">
+								<video id="player" controls autoplay width="300" height="220"></video>
+								<canvas id="snapshot" width=300 height=220></canvas>
+							</div>
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+	<footer class="footer bg-white">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-lg-12 h-100 text-center my-auto">
+			<ul class="list-inline mb-2">
+			  <li class="list-inline-item">
+				<a href="#">About</a>
+			  </li>
+			  <li class="list-inline-item">&sdot;</li>
+			  <li class="list-inline-item">
+				<a href="#">Contact</a>
+			  </li>
+			  <li class="list-inline-item">&sdot;</li>
+			  <li class="list-inline-item">
+				<a href="#">Terms of Use</a>
+			  </li>
+			  <li class="list-inline-item">&sdot;</li>
+			  <li class="list-inline-item">
+				<a href="#">Privacy Policy</a>
+			  </li>
+			</ul>
+			<p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+		  </div>
+		</div>
+	  </div>
+	</footer>
+	<!-- -->
+
+
+
+</body>
+</html>
+
+<script src="/scripts/bootstrap.min.js"></script>
+<script src="/scripts/jquery-3.3.1.min.js"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyDZ_ZrQ5hXB6R0oqJp6TT62eMJIgnEFv3s"></script>
+<script src="/scripts/add.js"></script>
+<script src="/javascripts/AddView.js"></script>
