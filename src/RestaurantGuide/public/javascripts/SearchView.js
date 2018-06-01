@@ -6,11 +6,26 @@ function ajaxQuery(url, data) {
         type: 'POST',
         success: function (dataR) {
             document.getElementById("SearchResult").innerHTML = parserResult(dataR);
+            storeCachedData('rest_search', dataR);
+            hindOfflineWarning();
         },
         error: function (xhr, status, error) {
+            showOfflineWarning();
+            //getCachedData("rest_search", new Date().getTime());
+            document.getElementById("SearchResult").innerHTML = parserResult(getCachedData("rest_search", new Date().getTime()));
             alert('Error: ' + error.message);
         }
     });
+}
+
+function hindOfflineWarning(){
+    if (document.getElementById('offline_div')!=null)
+        document.getElementById('offline_div').style.display='none';
+}
+
+function showOfflineWarning(){
+    if (document.getElementById('offline_div')!=null)
+        document.getElementById('offline_div').style.display='block';
 }
 
 function onSubmitSearch(url) {
