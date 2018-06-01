@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require("body-parser");
-
-
-var restaurant = require('../controllers/RestaurantsController');
+var restaurant = require('../controllers/AddController');
 var initDB = require('../controllers/init');
 initDB.init();
 
@@ -15,5 +13,6 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', restaurant.insert);
+
 
 module.exports = router;
