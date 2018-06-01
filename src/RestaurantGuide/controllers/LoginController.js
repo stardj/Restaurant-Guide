@@ -1,4 +1,4 @@
-var UserInfo = require('../models/UserInfo');
+var UserInfo = require('../models/UserInfoModel');
 
 exports.loginCheck = function (req, res) {
 

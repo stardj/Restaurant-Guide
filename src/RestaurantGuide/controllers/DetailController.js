@@ -1,4 +1,4 @@
-var Restaurant = require('../models/Restaurant');
+var Restaurant = require('../models/RestaurantsModel');
 var mongoose = require('mongoose');
 
 exports.finding = function (req, res) {

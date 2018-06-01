@@ -1,4 +1,4 @@
-var Restaurant = require('../models/Restaurant');
+var Restaurant = require('../models/RestaurantsModel');
 
 exports.finding = function (req, res) {
     var userData = req.body;
