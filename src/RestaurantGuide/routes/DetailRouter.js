@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require("body-parser");
-var login = require('../controllers/LoginController');
+var detail = require('../controllers/DetailController');
 
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('login', {title: 'Log In'});
+    res.render('detail', {title: 'Detail'});
 });
 
-router.post('/', login.login);
+router.post('/', detail.finding);
 
 module.exports = router;

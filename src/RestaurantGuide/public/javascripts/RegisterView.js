@@ -6,6 +6,7 @@ function ajaxQuery(url, data) {
         type: 'POST',
         success: function (dataR) {
             iCheck(dataR);
+            // alert(dataR.length);
         },
         error: function (xhr, status, error) {
             alert('Error: ' + error.message);
@@ -13,9 +14,8 @@ function ajaxQuery(url, data) {
     });
 }
 
-function onSubmitLogin(url) {
+function onSubmitSignUp(url) {
     var formArray = $("form").serializeArray();
-
     var data = {};
     for (index in formArray) {
         data[formArray[index].name] = formArray[index].value;
@@ -26,16 +26,14 @@ function onSubmitLogin(url) {
     event.preventDefault();
 }
 
-
 function iCheck(dataR) {
 
     if (dataR.value == "Ture") {
-        alert("Login Success! Welcome " + dataR.username);
+        alert("Success!");
+        // document.getElementById('test').innerHTML = "Welcome to the world!";
     } else {
         alert("Incorrect account or password!")
     }
 
 }
 
-
-// });

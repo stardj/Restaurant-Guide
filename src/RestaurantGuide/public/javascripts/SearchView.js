@@ -6,12 +6,26 @@ function ajaxQuery(url, data) {
         type: 'POST',
         success: function (dataR) {
             document.getElementById("SearchResult").innerHTML = parserResult(dataR);
-            // document.getElementById("result").innerHTML = "This is a test";
+            storeCachedData('rest_search', dataR);
+            hindOfflineWarning();
         },
         error: function (xhr, status, error) {
+            showOfflineWarning();
+            //getCachedData("rest_search", new Date().getTime());
+            document.getElementById("SearchResult").innerHTML = parserResult(getCachedData("rest_search", new Date().getTime()));
             alert('Error: ' + error.message);
         }
     });
+}
+
+function hindOfflineWarning(){
+    if (document.getElementById('offline_div')!=null)
+        document.getElementById('offline_div').style.display='none';
+}
+
+function showOfflineWarning(){
+    if (document.getElementById('offline_div')!=null)
+        document.getElementById('offline_div').style.display='block';
 }
 
 function onSubmitSearch(url) {
@@ -24,7 +38,7 @@ function onSubmitSearch(url) {
     event.preventDefault();
 }
 
-function builddocument(data) {
+function buildDocument(data) {
 
     var rootNode = document.createElement("DIV");
     var imgNode = document.createElement("DIV");
@@ -37,7 +51,7 @@ function builddocument(data) {
 
     var imga = document.createElement("A");
     var imgval = document.createElement("IMG");
-    imga.setAttribute("href", "detail.html");
+    imga.setAttribute("href", "detail?" + data._id + "");
     imgval.setAttribute("src", "images/2.jpg");//restaurant img
     imgval.setAttribute("class", "img-rounded");
     imga.appendChild(imgval);
@@ -51,8 +65,8 @@ function builddocument(data) {
     var infosmall2 = document.createElement("SMALL");
     var infosmall3 = document.createElement("SMALL");
 
-    infoa.setAttribute("href", "detail.html");
-    var infoh5text = document.createTextNode("data.restaurant_name " + data.post_code);// restaurant_name
+    infoa.setAttribute("href", "detail?" + data._id + "");
+    var infoh5text = document.createTextNode(data.restaurant_name);// restaurant_name
     infoh5.appendChild(infoh5text);
     infoa.appendChild(infoh5);
     infoimg.setAttribute("src", "images/rank4.jpg");//rank
@@ -83,14 +97,53 @@ function builddocument(data) {
 function parserResult(dataR) {
 
     var output = document.createElement("DIV");
-    output.setAttribute("class", "col-md-12");
+    // output.setAttribute("class", "col-md-12");
 
     dataR.forEach(function (dataR) {
-        output.appendChild(builddocument(dataR));
+        output.appendChild(buildDocument(dataR));
     });
 
     return output.innerHTML;
 }
+
+$(function () {
+    $('.checkbox').click(function () {
+        var typeOfRestaurant = $("[name='typeOfRestaurant']:checked");
+        var typeOfCuisine = $("[name='typeOfCuisine']:checked");
+        var typeOfRestaurant1 = $("[name='typeOfRestaurant1']:checked");
+        var typeOfCuisine1 = $("[name='typeOfCuisine1']:checked");
+
+        var boxval = "";
+        var boxval1 = "";
+        typeOfRestaurant.each(function (index, value) {
+            // if($(this).attr('checked')=='checked'){
+            //     typeOfRestaurant1[index].checked = "checked";
+            // }
+            // typeOfRestaurant1[value].attr("checked", "checked");
+            boxval += $(this).val() + "*^";
+            $(this).attr("checked", "checked");
+        });
+
+        typeOfCuisine.each(function (value) {
+            boxval1 += $(this).val() + "*^";
+            $(this).attr("checked", "checked");
+        });
+
+        // typeOfRestaurant1.each(function (value) {
+        //     boxval += $(this).val() + "*^";
+        //     $(this).attr("checked", "checked");
+        // });
+        // typeOfCuisine1.each(function (value) {
+        //     boxval1 += $(this).val() + "*^";
+        //     $(this).attr("checked", "checked");
+        // });
+
+        alert("typeOfRestaurant: " + boxval);
+        alert("typeOfCuisine: " + boxval1);
+    });
+
+
+});
 
 // function createDiv(data) {
 //     var rootNode = $("<div></div>");

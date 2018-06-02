@@ -12,8 +12,11 @@ function sendAjaxQuery(url, data) {
             // in order to have the object printed by alert
             // we need to JSON stringify the object
             document.getElementById('results').innerHTML= JSON.stringify(ret);
+            storeCachedData('index', dataR);
+            console.log("gooooooooooooooooooooooooooooooooooo?");
         },
         error: function (xhr, status, error) {
+            document.getElementById('results').innerHTML= JSON.stringify(getCachedData("index", new Date().getTime()));
             alert('Error: ' + error.message);
         }
     });

@@ -1,4 +1,9 @@
 $(function () {
+
+    // $('.checkbox').click(function () {
+    //     alert("DONE");
+    //     // alert($("[name='typeOfRestaurant']").val());
+    // });
 	
 	$('#mobile-nav-taggle,#btnBack').click(function () {
 		var mobileMenu = $('#mobile-menu');

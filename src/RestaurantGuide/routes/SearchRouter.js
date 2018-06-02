@@ -10,7 +10,7 @@ initDB.init();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    var data = {title: 'Restaurant Guide Search'};
+    var data = {title: 'Restaurant Guide'};
     res.render('search', data);
 });
 
