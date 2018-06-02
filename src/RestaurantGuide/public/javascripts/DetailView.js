@@ -142,9 +142,12 @@ $(function () {
         return result;
     }
 
-    function buildCommentNode(dataR) {
+    function buildCommentNode(account, detail, review_time, dataR) {
         var html = '<div class="row col-center-block p-2 mb-2 w-100 border rounded shadow-textarea scrollable flex-wrap"\n' +
             '                     style="height:200px; ">';
+        if (detail != "") {
+            html += addComment1(account, detail, review_time);
+        }
         dataR.forEach(function (dataR) {
             html += addComment(dataR);
         });
@@ -154,9 +157,18 @@ $(function () {
 
     function addComment(data) {
         var div = '<p><div class="mt-0 border-top">'
-            + data.user_account
+            + "[" + (data.review_time) + "] " + data.user_account
             + ': <i>'
             + data.review_detail
+            + '</i></div></p>';
+        return div;
+    }
+
+    function addComment1(user_account, review_detail, review_time) {
+        var div = '<p><div class="mt-0 border-top">'
+            + "[" + (review_time) + "] " + user_account
+            + ': <i>'
+            + review_detail
             + '</i></div></p>';
         return div;
     }
@@ -177,11 +189,12 @@ $(function () {
         insertData['review_detail'] = $("#taComment").val();
         insertData['rank_score'] = star;
         var socket = io.connect('http://localhost:8000');
+        socket.emit('input', {comment: insertData});
         socket.on('news', function (data) {
             $("#testReview").empty();
-            $("#testReview").append(buildCommentNode(data['comment']));
+            $("#testReview").append(buildCommentNode(insertData['user_account'], insertData['review_detail'], insertData['review_time'], data['comment']));
         });
-        socket.emit('input', {comment: insertData});
+
     });
 
     $("#commentBtn").click();

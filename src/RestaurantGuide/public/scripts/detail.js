@@ -12,39 +12,39 @@ function openImg(img) {
 	
 $(function(){ 
 	
-	var camera = document.getElementById('camera');
-	var frame = document.getElementById('frame');
-	camera.addEventListener('change', function(e) {
-		var file = e.target.files[0]; 
-	// Do something with the image file.
-		//alert(file);
-		if (!file) {
-			$('#camera').val('');
-			$('#camera').attr('src','');
-			$('#frame').attr('src','');
-		} else {
-			if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
-				alert("Only image file is allowed");
-				$('#camera').val('');
-				$('#camera').attr('src','');
-				$('#frame').attr('src','');
-			} else {
-				$('#frame').attr('src',URL.createObjectURL(file));
-			}
-		}
-	});
+	// var camera = document.getElementById('camera');
+	// var frame = document.getElementById('frame');
+	// camera.addEventListener('change', function(e) {
+	// 	var file = e.target.files[0];
+	// // Do something with the image file.
+	// 	//alert(file);
+	// 	if (!file) {
+	// 		$('#camera').val('');
+	// 		$('#camera').attr('src','');
+	// 		$('#frame').attr('src','');
+	// 	} else {
+	// 		if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+	// 			alert("Only image file is allowed");
+	// 			$('#camera').val('');
+	// 			$('#camera').attr('src','');
+	// 			$('#frame').attr('src','');
+	// 		} else {
+	// 			$('#frame').attr('src',URL.createObjectURL(file));
+	// 		}
+	// 	}
+	// });
 	
-	$('#btnClear').click(function(e) {
-		$('#camera').attr('src','');
-		$('#camera').val('');
-		$('#frame').attr('src','');
-	});
+	// $('#btnClear').click(function(e) {
+	// 	$('#camera').attr('src','');
+	// 	$('#camera').val('');
+	// 	$('#frame').attr('src','');
+	// });
 		
-	$('#btnClearPhoto').click(function(e) {
-		$('#info').text('No photo captured.');
-		$('#snapshot').css('display','none');
-		$('#player').css('display','none');
-	});	
+	// $('#btnClearPhoto').click(function(e) {
+	// 	$('#info').text('No photo captured.');
+	// 	$('#snapshot').css('display','none');
+	// 	$('#player').css('display','none');
+	// });
 		
 	$('#btnEnable').click(function(e) {
 		

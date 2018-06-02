@@ -19,22 +19,27 @@ function ajaxQuery(url, data) {
     });
 }
 
-function hindOfflineWarning(){
-    if (document.getElementById('offline_div')!=null)
-        document.getElementById('offline_div').style.display='none';
+function hindOfflineWarning() {
+    if (document.getElementById('offline_div') != null)
+        document.getElementById('offline_div').style.display = 'none';
 }
 
-function showOfflineWarning(){
-    if (document.getElementById('offline_div')!=null)
-        document.getElementById('offline_div').style.display='block';
+function showOfflineWarning() {
+    if (document.getElementById('offline_div') != null)
+        document.getElementById('offline_div').style.display = 'block';
 }
 
 function onSubmitSearch(url) {
     var formArray = $("form").serializeArray();
+    var distance = $("input[name|='distance']:checked").val();
     var data = {};
     for (index in formArray) {
         data[formArray[index].name] = formArray[index].value;
     }
+    data['distance'] = distance;
+    data['locate_longitude'] = $("#long").val();
+    data['locate_latitude'] = $("#lat").val();
+    // alert(distance);
     ajaxQuery(url, data);
     event.preventDefault();
 }
@@ -98,19 +103,34 @@ function buildDocument(data) {
 function parserResult(dataR) {
 
     var output = document.createElement("DIV");
+    var output1 = "";
+    var index = 1;
 
     dataR.forEach(function (dataR) {
         output.appendChild(buildDocument(dataR));
     });
 
+    dataR.forEach(function (value) {
+        var tmp = "";
+        tmp += value.restaurant_name + ",";
+        tmp += value.locate_latitude + ",";
+        tmp += value.locate_longitude + ",";
+        tmp += index + "#";
+        output1 += tmp;
+
+
+    });
+
+    if(output1 != "{"){
+        $("#locationREST").val(output1);
+    }
     return output.innerHTML;
 }
 
 $(function () {
-    $(".checkbox [name|='typeOfRestaurant']").click(function () {
+    $(".checkbox [name|='typeOfRestaurant'],[name|='typeOfCuisine']").click(function () {
         var typeOfRestaurant = $("[name='typeOfRestaurant']:checked");
         var typeOfCuisine = $("[name='typeOfCuisine']:checked");
-
         var boxval = "";
         var boxval1 = "";
         typeOfRestaurant.each(function (value) {
@@ -123,108 +143,82 @@ $(function () {
             $(this).attr("checked", "checked");
         });
 
-        alert("typeOfRestaurant: " + boxval);
-        alert("typeOfCuisine: " + boxval1);
+        var formArray = $("form").serializeArray();
+        var distance = $("input[name|='distance']:checked").val();
+        var data = {};
+        for (index in formArray) {
+            data[formArray[index].name] = formArray[index].value;
+        }
+        data['distance'] = distance;
+        data['locate_longitude'] = $("#long").val();
+        data['locate_latitude'] = $("#lat").val();
+        data['typeOfRestaurant'] = boxval;
+        data['typeOfCuisine'] = boxval1;
+        ajaxQuery(url, data);
 
+        // var tmp = $("#lat").val();
+        // alert(tmp);
+        // alert("typeOfRestaurant: " + boxval);
+        // alert("typeOfCuisine: " + boxval1);
     });
 
-    $("input[name|='typeOfRestaurant']").click(function(){
-        var idx = $(this).val()-1;
-        if($("input[name|='typeOfRestaurant1']").eq(idx).attr('checked')=='checked'){
+    $("input[name|='typeOfRestaurant']").click(function () {
+        var idx = $(this).val() - 1;
+        if ($("input[name|='typeOfRestaurant1']").eq(idx).attr('checked') == 'checked') {
             $("input[name|='typeOfRestaurant1']").eq(idx).removeAttr('checked');
-        }else{
+        } else {
             $("input[name|='typeOfRestaurant1']").eq(idx).attr('checked', 'checked');
         }
     });
 
-    $("input[name|='typeOfRestaurant1']").click(function(){
-        var idx = $(this).val()-1;
-        if($("input[name|='typeOfRestaurant']").eq(idx).attr('checked')=='checked'){
+    $("input[name|='typeOfRestaurant1']").click(function () {
+        var idx = $(this).val() - 1;
+        if ($("input[name|='typeOfRestaurant']").eq(idx).attr('checked') == 'checked') {
             $("input[name|='typeOfRestaurant']").eq(idx).removeAttr('checked');
-        }else{
+        } else {
             $("input[name|='typeOfRestaurant']").eq(idx).attr('checked', 'checked');
         }
     });
 
-    $("input[name|='typeOfCuisine']").click(function(){
-        var idx = $(this).val()-1;
-        if($("input[name|='typeOfCuisine1']").eq(idx).attr('checked')=='checked'){
+    $("input[name|='typeOfCuisine']").click(function () {
+        var idx = $(this).val() - 1;
+        if ($("input[name|='typeOfCuisine1']").eq(idx).attr('checked') == 'checked') {
             $("input[name|='typeOfCuisine1']").eq(idx).removeAttr('checked');
-        }else{
+        } else {
             $("input[name|='typeOfCuisine1']").eq(idx).attr('checked', 'checked');
         }
     });
 
-    $("input[name|='typeOfCuisine1']").click(function(){
-        var idx = $(this).val()-1;
-        if($("input[name|='typeOfCuisine']").eq(idx).attr('checked')=='checked'){
+    $("input[name|='typeOfCuisine1']").click(function () {
+        var idx = $(this).val() - 1;
+        if ($("input[name|='typeOfCuisine']").eq(idx).attr('checked') == 'checked') {
             $("input[name|='typeOfCuisine']").eq(idx).removeAttr('checked');
-        }else{
+        } else {
             $("input[name|='typeOfCuisine']").eq(idx).attr('checked', 'checked');
         }
     });
 
-});
+    $("input[name|='distance']").click(function (e) {
+        var button = $("input[name|='distance']:checked");
+        var buttons = $("input[name|='distance1']");
+        buttons.each(function (index, element) {
+            if (button.val() == element.value) {
+                element.checked = true;
+            }
+        });
+    });
 
-// function createDiv(data) {
-//     var rootNode = $("<div></div>");
-//     var imgNode = $("<div></div>");
-//     var infoNode = $("<div></div>");
-//     // rootNode.attr("id", data._id);
-//     rootNode.addclass("row item_line m-4");
-//     // imgNode.attr("id", data._id);
-//     imgNode.addClass("item pic");
-//     // infoNode.attr("id", data._id);
-//     infoNode.addClass("col-xs-6 col-sm-6 col-md-6 item");
-//
-//     /*******************************************************/
-//     var imga = $("<a></a>");
-//     var imgval = $("<img>");
-//     imga.attr("href", "detail.html");
-//     imgval.attr("src", "images/2.jpg");
-//     imgval.addClass("img-rounded");
-//     imga.append(imgval);
-//
-//     imgNode.append(imga);
-//     /*******************************************************/
-//
-//     /*******************************************************/
-//     var infoa = $("<a></a>>");
-//     var infoh5 = $("<h5></h5>>");
-//     var infop = $("<p></p>>");
-//     var infoimg = $("<img>");
-//     var infosmall1 = $("<small></small>>");
-//     var infosmall2 = $("<small></small>>");
-//     var infosmall3 = $("<small></small>>");
-//
-//     infoa.attr("href", "detail.html");
-//     // infoh5.text(data.restaurant_name);
-//     infoh5.text("data.restaurant_name");
-//     infoa.append(infoh5);
-//
-//     infoimg.attr("images/rank4.jpg");
-//     infoimg.addClass("img-rounded");
-//
-//     infosmall1.text("233333 reviews");
-//     infop.text("American Burger Friendly Fish & Chips Options");
-//     infosmall2.text("\"Lovely but very different now\" - 09/04/2018");
-//     infosmall3.text("\"Excellent\" - 06/04/2018");
-//
-//
-//     infoNode.append(infoa);
-//     infoNode.append(infoimg);
-//     infoNode.append(infosmall1);
-//     infoNode.append(infop);
-//     infoNode.append(infosmall2);
-//     infoNode.append(infosmall3);
-//
-//     /*******************************************************/
-//
-//     rootNode.append(imgNode);
-//     rootNode.append(infoNode);
-//
-//     return rootNode;
-// };
+    $("input[name|='distance1']").click(function (e) {
+        var button = $("input[name|='distance1']:checked");
+        var buttons = $("input[name|='distance']");
+        buttons.each(function (index, element) {
+            if (button.val() == element.value) {
+                element.checked = true;
+            }
+        });
+    });
+
+});
 
 
 

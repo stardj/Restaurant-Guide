@@ -5,14 +5,12 @@ var mongoose = require('mongoose');
 exports.finding = function (req, res) {
     var userData = req.body;
     console.log(userData);
-    onlyNameSearch(userData, res);
 
-    // if (userData.restauranttype != null || userData.cuisinetype != null) {
-    //     nameAndTypeSearch(userData, res);
-    // } else {
-    //     nameSearch(userData, res);
-    // }
-
+    if (isNotNull(userData.typeOfRestaurant) || isNotNull(userData.typeOfCuisine)) {
+        nameAndTypeSearch(userData, res);
+    } else {
+        nameSearch(userData, res);
+    }
 };
 
 function nameAndTypeSearch(userData, res) {
@@ -44,7 +42,7 @@ function onlyNameSearch(userData, res) {
         } else {
             console.log("#########");
             restaurant.forEach(function (restaurant) {
-                console.log(restaurant.post_code);
+                console.log(restaurant.restaurant_name);
             });
             console.log("#########");
             res.setHeader('Content-Type', 'application/json');
@@ -54,13 +52,14 @@ function onlyNameSearch(userData, res) {
 }
 
 function nameSearch(userData, res) {
+    // console.log(userData);
     Restaurant.find({restaurant_name: {$regex: userData.restaurantname, $options: "$i"}}, function (err, restaurant) {
         if (err) {
             res.send('error has occured');
         } else {
             console.log("#########");
             restaurant.forEach(function (restaurant) {
-                console.log(restaurant.post_code);
+                console.log(restaurant.restaurant_name);
             });
             console.log("#########");
             res.setHeader('Content-Type', 'application/json');
@@ -69,53 +68,38 @@ function nameSearch(userData, res) {
     });
 }
 
+function isNotNull(data) {
+    return data != null && data != "" && data != undefined ? true : false;
+}
+
 
 function distanceSearch(userData, restaurant) {
     var result = [];
+    console.log("location: ");
+    console.log("long: " + userData.locate_longitude);
+    console.log("lat: " + userData.locate_latitude);
+
     restaurant.forEach(function (value) {
-        if (userData.distance >= sphereDistance(value.locate_longitude, value.locate_latitude)) {
+        console.log(value.restaurant_name + ":");
+        console.log("long: " + value.locate_longitude);
+        console.log("lat: " + value.locate_latitude);
+        var temp = GetDistance(userData.locate_latitude, userData.locate_longitude, value.locate_latitude, value.locate_longitude);
+        // var temp = GetDistance(39.95676, 116.401394, 36.63014, 114.499574);
+        console.log("distance: " + temp);
+        if (userData.distance >= temp * 1000) {
             result.push(value);
         }
     });
     return result;
 }
 
-function sphereDistance(a, b) {
-    var ax = null;
-    var ay = null;
-    var bx = null;
-    var by = null;
-    for (var key in a) {
-        if (ax == null) {
-            ax = a[key] * (Math.PI / 180);
+function GetDistance(lat1, lng1, lat2, lng2) {
 
-        } else if (ay == null) {
-            ay = a[key] * (Math.PI / 180);
-
-        }
-
-    }
-    for (var key in b) {
-        if (bx == null) {
-            bx = b[key] * (Math.PI / 180);
-
-        } else if (by == null) {
-            by = b[key] * (Math.PI / 180);
-
-        }
-
-    }
-
-    var sin_x1 = Math.sin(ax), cos_x1 = Math.cos(ax);
-    var sin_y1 = Math.sin(ay), cos_y1 = Math.cos(ay);
-    var sin_x2 = Math.sin(bx), cos_x2 = Math.cos(bx);
-    var sin_y2 = Math.sin(by), cos_y2 = Math.cos(by);
-    var cross_prod = cos_y1 * cos_x1 * cos_y2 * cos_x2 + cos_y1 * sin_x1 * cos_y2 * sin_x2 + sin_y1 * sin_y2;
-    if (cross_prod >= 1 || cross_prod <= -1) {
-        if (!(Math.abs(cross_prod) - 1 < 0.000001)) {
-            return false;
-        }
-        return cross_prod > 0 ? 0 : Math.PI;
-    }
-    return Math.acos(cross_prod);
+    var radLat1 = lat1 * Math.PI / 180.0;
+    var radLat2 = lat2 * Math.PI / 180.0;
+    var radLon1 = lng1 * Math.PI / 180.0;
+    var radLon2 = lng2 * Math.PI / 180.0;
+    var R = 6371;
+    var d = Math.acos(Math.sin(radLat1) * Math.sin(radLat2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.cos(radLon2 - radLon1)) * R;
+    return d;
 }

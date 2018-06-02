@@ -54,8 +54,20 @@ $(function () {
             $(this).css('box-shadow', '');
         });
 
-    
-	// Map enabled
+    $('#btnEnlarge').click(function(e) {
+        if($('#btnEnlarge').text()=='Enlarge'){
+            $('#info').css('height','300px');
+            $('#btnEnlarge').text('Shrink');
+        }else{
+            $('#info').css('height','100%');
+            $('#btnEnlarge').text('Enlarge');
+        }
+    });
+
+
+});
+
+// Map enabled
 	function searchMap(){
 		if (window.navigator.geolocation) {
 			var geolocation = window.navigator.geolocation;
@@ -67,7 +79,7 @@ $(function () {
 			info.innerHTML = "Your broswer doesn't support map function. Please change to other browsers.";
 		}
 	}
-	//}
+
     function returnError(error) {
         switch (error.code) {
             case error.POSITION_UNAVAILABLE:
@@ -86,12 +98,17 @@ $(function () {
         var lat = position.coords.latitude;
         var long = position.coords.longitude;
         var latLng = new google.maps.LatLng(lat, long);
+        $("#lat").val(lat);
+        $("#long").val(long);
         /***************************************************************/
         //TODO
-        var locations = [
-            ['Firepit', 53.381021, -1.476363, 1],
-            ['Hot Chilli', 53.385822, -1.479223, 2]
-        ];
+        // var locations = [
+        //     ['Firepit', 53.381021, -1.476363, 1],
+        //     ['Hot Chilli', 53.385822, -1.479223, 2]
+        // ];
+        var locations1 = $("#locationREST").val();
+        var tmp = locations1.split('#');
+        // alert(tmp[0]);
         /***************************************************************/
         var markers = [];
         var map = new google.maps.Map(document.getElementById("map"), {
@@ -102,16 +119,18 @@ $(function () {
 
         var mapInfoWindow = new google.maps.InfoWindow;
         var marker, i;
-        for (i = 0; i < locations.length; i++) {
+        for (i = 0; i < tmp.length; i++) {
+            var valTmp = tmp[i].split(',');
+            // alert(valTmp[2]);
             marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                position: new google.maps.LatLng(valTmp[1], valTmp[2]),
                 map: map,
-                label: String(locations[i][3])
+                label: String(i+1)
             });
             markers.push(marker);
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                 return function () {
-                    mapInfoWindow.setContent(locations[i][0]);
+                    mapInfoWindow.setContent(valTmp[0]);
                     mapInfoWindow.open(map, marker);
                 }
             })(marker, i));
@@ -122,7 +141,7 @@ $(function () {
     }
 
     function drawCricleRange(latLng, map) {
-        var radius = parseInt($("input[name='distance']").val());	// get distance from radio
+        var radius = parseInt($("input[name='distance']:checked").val());	// get distance from radio
         var populationOptions = {
             strokeColor: 'blue',
             strokeOpacity: 0.1,
@@ -136,15 +155,3 @@ $(function () {
         new google.maps.Circle(populationOptions);
     }
 	
-	$('#btnEnlarge').click(function(e) {
-		if($('#btnEnlarge').text()=='Enlarge'){
-			$('#info').css('height','300px');
-			$('#btnEnlarge').text('Shrink');
-		}else{
-			$('#info').css('height','100%');
-			$('#btnEnlarge').text('Enlarge');
-		}
-	});
-	
-
-});

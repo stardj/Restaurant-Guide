@@ -14,7 +14,9 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('input', function (data) {
         var userData = data['comment'];
-        if(data.review_detail != null) {
+        // console.log(userData.length);
+
+        if (isNotNull(userData.review_detail)) {
             try {
                 var review = new Review({
                     restaurant_id: userData.restaurant_id,
@@ -38,17 +40,21 @@ io.sockets.on('connection', function (socket) {
             if (err) {
                 socket.emit('news', {comment: err});
             } else {
+
                 console.log("#########");
-                console.log("review find: " + review);
+                console.log("review find: " + review.length);
                 console.log("#########");
                 socket.emit('news', {comment: review});
             }
-        });
+        }).sort({review_time: -1});
 
     });
 
 });
 
+function isNotNull(data) {
+    return data != null && data != "" && data != undefined ? true : false;
+}
 
 /* GET home page. */
 router.get('/', function (req, res, next) {

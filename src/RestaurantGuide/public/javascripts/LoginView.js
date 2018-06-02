@@ -15,27 +15,21 @@ function ajaxQuery(url, data) {
 
 function onSubmitLogin(url) {
     var formArray = $("form").serializeArray();
-
     var data = {};
     for (index in formArray) {
         data[formArray[index].name] = formArray[index].value;
     }
     data[formArray.name] = formArray.value;
-
     ajaxQuery(url, data);
     event.preventDefault();
 }
 
 
 function iCheck(dataR) {
-
     if (dataR.value == "Ture") {
         alert("Login Success! Welcome " + dataR.username);
+        window.history.back(-1);
     } else {
         alert("Incorrect account or password!")
     }
-
 }
-
-
-// });

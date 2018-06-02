@@ -8,8 +8,8 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/database.js"></script>
     <script src="/javascripts/SearchView.js"></script>
-    <script src="https://maps.google.com/maps/api/js"></script>
-
+    <!--<script src="https://maps.google.com/maps/api/js"></script>-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ_ZrQ5hXB6R0oqJp6TT62eMJIgnEFv3s&callback=initMap"  type="text/javascript"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -29,10 +29,16 @@
         <div class="container middle">
             <a class="navbar-brand" href="#"><h2><%= title %></h2></a>
         </div>
-        <div class="nav navbar-nav navbar-right">
-            <a id="signIn" class="btn btn-primary" href="login">Sign In</a>
-            <!--<a id="signEd" class="btn btn-primary" href="login" style="display: none">Signed</a>-->
+        <div class="nav navbar-nav navbar-right mr-2">
+            <a class="btn btn-primary btn-sm" href="register">Sign Up</a >
         </div>
+        <div class="nav navbar-nav navbar-right">
+            <a class="btn btn-primary btn-sm" href="login">Sign In</a >
+        </div>
+        <!--<div class="nav navbar-nav navbar-right">-->
+            <!--<a id="signIn" class="btn btn-primary" href="login">Sign In</a>-->
+            <!--&lt;!&ndash;<a id="signEd" class="btn btn-primary" href="login" style="display: none">Signed</a>&ndash;&gt;-->
+        <!--</div>-->
         <div class="nav navbar-nav navbar-right visible-xs visible-sm m-2">
             <a href="#" class="mobile-nav-taggle" id="mobile-nav-taggle">
                 <span class=" navbar-toggler-icon"></span>
@@ -135,16 +141,16 @@
                                 <div class="title">Distance</div>
                                 <div class="controls">
                                     <label class="radio inline">
-                                        <input name="group" type="radio" name="distance" value="1000"> 1km
+                                        <input type="radio" name="distance" value="1000" checked="checked"> 1km
                                     </label>
                                     <label class="radio inline">
-                                        <input name="group" type="radio" name="distance" value="2000"> 2km
+                                        <input type="radio" name="distance" value="2000"> 2km
                                     </label>
                                     <label class="radio inline">
-                                        <input name="group" type="radio" name="distance" value="5000"> 5km
+                                        <input type="radio" name="distance" value="5000"> 5km
                                     </label>
                                     <label class="radio inline">
-                                        <input name="group" type="radio" name="distance" value="10000"> 10km
+                                        <input type="radio" name="distance" value="10000"> 10km
                                     </label>
                                 </div>
                             </div>
@@ -270,16 +276,16 @@
                 <div class="title_mb">Distance</div>
                 <div id="radio_mb" class="controls">
                     <label class="radio inline">
-                        <input name="group" type="radio" name="distance" value="1000" checked="checked"> 1km
+                        <input type="radio" name="distance1" value="1000" > 1km
                     </label>
                     <label class="radio inline">
-                        <input name="group" type="radio" name="distance" value="2000"> 2km
+                        <input type="radio" name="distance1" value="2000"> 2km
                     </label>
                     <label class="radio inline">
-                        <input name="group" type="radio" name="distance" value="5000"> 5km
+                        <input type="radio" name="distance1" value="5000"> 5km
                     </label>
                     <label class="radio inline">
-                        <input name="group" type="radio" name="distance" value="10000"> 10km
+                        <input type="radio" name="distance1" value="10000"> 10km
                     </label>
                 </div>
             </div>
@@ -293,6 +299,10 @@
             </div>
         </div>
     </form>
+    <input id="lat" hidden>
+    <input id="long" hidden>
+    <input id="locationREST" hidden>
+
 </div>
 
 
