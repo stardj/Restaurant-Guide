@@ -5,6 +5,7 @@ exports.insert = function (req, res) {
     if (userData == null) {
         res.status(403).send('No data sent!')
     }
+
     try {
         var restaurant = new Restaurant({
             restaurant_name: userData.restaurantname,   //餐厅名
