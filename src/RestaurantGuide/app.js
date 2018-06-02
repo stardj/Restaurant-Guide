@@ -7,13 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-// var testindex = require('./routes/testindex');
-var users = require('./routes/users');
 var login = require('./routes/LoginRouter');
 var detail = require('./routes/DetailRouter');
 var register = require('./routes/RegisterRouter');
-var test_distance = require('./routes/test_distance');
 var search = require('./routes/SearchRouter');
 
 var app = express();
@@ -41,16 +37,8 @@ app.use('/detail', detail);
 // app.use('/users', users);
 app.use('/login', login);
 app.use('/register', register);
-app.use('/test_distance', test_distance);
-// app.use('/testindex', testindex);
 
-// app.use(cookieSession({
-//     name: 'session',
-//     keys: 'logincookie',
-//
-//     // Cookie Options
-//     maxAge: 24 * 60 * 60 * 1000 // 24 hours
-// }));
+
 
 
 // catch 404 and forward to error handler

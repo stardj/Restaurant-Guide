@@ -5,6 +5,7 @@ exports.finding = function (req, res) {
     var userData = req.body;
     console.log(userData);
     Restaurant.find({_id: mongoose.Types.ObjectId(userData.id)}, function (err, restaurant) {
+        console.log(userData.length);
         if (err) {
             res.send('error has occured');
         } else {

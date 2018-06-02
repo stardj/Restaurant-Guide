@@ -11,7 +11,10 @@ var RestaurantSchema = new Schema(
         post_code: {type: String},         //post_code
         rank_score: {type: String},        //rank_score
         image1: {type: String},            //image1
-        image2: {type: String}             //image2
+        image2: {type: String},             //image2
+        user_account: {type: String},              //user_account
+        locate_longitude: {type: String},
+        locate_latitude: {type: String}
     }
 );
 

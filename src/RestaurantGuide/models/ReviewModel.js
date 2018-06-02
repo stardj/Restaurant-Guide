@@ -8,9 +8,7 @@ var ReviewSchema = new Schema(
         user_account: {type: String},              //user_account
         review_time: {type: String},               //review_time
         review_detail: {type: String, max: 1024},   //review_detail
-        rank_score: {type: Number},                //rank_score
-        image1: {type: String},                    //image1
-        image2: {type: String}                     //image2
+        rank_score: {type: Number}                //rank_score
     }
 );
 

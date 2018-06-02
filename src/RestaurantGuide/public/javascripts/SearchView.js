@@ -6,6 +6,7 @@ function ajaxQuery(url, data) {
         type: 'POST',
         success: function (dataR) {
             document.getElementById("SearchResult").innerHTML = parserResult(dataR);
+            // parserResult(dataR);
             storeCachedData('rest_search', dataR);
             hindOfflineWarning();
         },
@@ -97,7 +98,6 @@ function buildDocument(data) {
 function parserResult(dataR) {
 
     var output = document.createElement("DIV");
-    // output.setAttribute("class", "col-md-12");
 
     dataR.forEach(function (dataR) {
         output.appendChild(buildDocument(dataR));
@@ -107,19 +107,13 @@ function parserResult(dataR) {
 }
 
 $(function () {
-    $('.checkbox').click(function () {
+    $(".checkbox [name|='typeOfRestaurant']").click(function () {
         var typeOfRestaurant = $("[name='typeOfRestaurant']:checked");
         var typeOfCuisine = $("[name='typeOfCuisine']:checked");
-        var typeOfRestaurant1 = $("[name='typeOfRestaurant1']:checked");
-        var typeOfCuisine1 = $("[name='typeOfCuisine1']:checked");
 
         var boxval = "";
         var boxval1 = "";
-        typeOfRestaurant.each(function (index, value) {
-            // if($(this).attr('checked')=='checked'){
-            //     typeOfRestaurant1[index].checked = "checked";
-            // }
-            // typeOfRestaurant1[value].attr("checked", "checked");
+        typeOfRestaurant.each(function (value) {
             boxval += $(this).val() + "*^";
             $(this).attr("checked", "checked");
         });
@@ -129,19 +123,46 @@ $(function () {
             $(this).attr("checked", "checked");
         });
 
-        // typeOfRestaurant1.each(function (value) {
-        //     boxval += $(this).val() + "*^";
-        //     $(this).attr("checked", "checked");
-        // });
-        // typeOfCuisine1.each(function (value) {
-        //     boxval1 += $(this).val() + "*^";
-        //     $(this).attr("checked", "checked");
-        // });
-
         alert("typeOfRestaurant: " + boxval);
         alert("typeOfCuisine: " + boxval1);
+
     });
 
+    $("input[name|='typeOfRestaurant']").click(function(){
+        var idx = $(this).val()-1;
+        if($("input[name|='typeOfRestaurant1']").eq(idx).attr('checked')=='checked'){
+            $("input[name|='typeOfRestaurant1']").eq(idx).removeAttr('checked');
+        }else{
+            $("input[name|='typeOfRestaurant1']").eq(idx).attr('checked', 'checked');
+        }
+    });
+
+    $("input[name|='typeOfRestaurant1']").click(function(){
+        var idx = $(this).val()-1;
+        if($("input[name|='typeOfRestaurant']").eq(idx).attr('checked')=='checked'){
+            $("input[name|='typeOfRestaurant']").eq(idx).removeAttr('checked');
+        }else{
+            $("input[name|='typeOfRestaurant']").eq(idx).attr('checked', 'checked');
+        }
+    });
+
+    $("input[name|='typeOfCuisine']").click(function(){
+        var idx = $(this).val()-1;
+        if($("input[name|='typeOfCuisine1']").eq(idx).attr('checked')=='checked'){
+            $("input[name|='typeOfCuisine1']").eq(idx).removeAttr('checked');
+        }else{
+            $("input[name|='typeOfCuisine1']").eq(idx).attr('checked', 'checked');
+        }
+    });
+
+    $("input[name|='typeOfCuisine1']").click(function(){
+        var idx = $(this).val()-1;
+        if($("input[name|='typeOfCuisine']").eq(idx).attr('checked')=='checked'){
+            $("input[name|='typeOfCuisine']").eq(idx).removeAttr('checked');
+        }else{
+            $("input[name|='typeOfCuisine']").eq(idx).attr('checked', 'checked');
+        }
+    });
 
 });
 
