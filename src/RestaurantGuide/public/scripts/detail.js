@@ -139,7 +139,7 @@ $(function(){
 		var height = 600;
 		var top = (window.screen.availHeight - 30 - height) / 2;
 		var left = (window.screen.availWidth - 10 - width) / 2;
-		var win = window.open("map.html"+"?lat=53.381021&long=-1.476363", "Enlarged Map", "width=" + width + ", height=" + height + ",top=" + top + ",left=" + left + ",toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no,alwaysRaised=no,depended=no");
+		var win = window.open("map"+"?lat=53.381021&long=-1.476363", "Enlarged Map", "width=" + width + ", height=" + height + ",top=" + top + ",left=" + left + ",toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no,alwaysRaised=no,depended=no");
 	});
 	
 });

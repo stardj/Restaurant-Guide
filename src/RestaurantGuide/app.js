@@ -11,6 +11,7 @@ var login = require('./routes/LoginRouter');
 var detail = require('./routes/DetailRouter');
 var register = require('./routes/RegisterRouter');
 var search = require('./routes/SearchRouter');
+var iMap = require('./routes/MapRouter');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use('/detail', detail);
 // app.use('/users', users);
 app.use('/login', login);
 app.use('/register', register);
+app.use('/map', iMap);
 
 
 
