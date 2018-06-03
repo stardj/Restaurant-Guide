@@ -27,10 +27,9 @@ function onSubmitSignUp(url) {
 }
 
 function iCheck(dataR) {
-
     if (dataR.value == "Ture") {
         alert("Success!");
-        // document.getElementById('test').innerHTML = "Welcome to the world!";
+        window.history.back(-1);
     } else {
         alert("Incorrect account or password!")
     }

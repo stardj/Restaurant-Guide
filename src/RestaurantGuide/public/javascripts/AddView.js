@@ -3,7 +3,6 @@ $(function () {
         $.ajax({
             url: url,
             data: input,
-            // dataType: 'json',
             type: 'POST',
             async: false,
             cache: false,
@@ -12,6 +11,7 @@ $(function () {
             success: function (data) {
                 if(data.value == "True"){
                     alert("successed");
+                    window.history.back(-1);
                 } else {
                     alert("insert failed!");
                 }

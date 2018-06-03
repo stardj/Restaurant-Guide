@@ -16,7 +16,36 @@ exports.insert = function (req, res, next) {
     if (userData == null) {
         res.status(403).send('No data sent!')
     }
-    res.send({value: "True"});
+    // res.send({value: "True"});
+
+
+    // var userData = req.body;
+    // if (userData == null) {
+    //     res.status(403).send('No data sent!')
+    // }
+
+    var restaurant = new Restaurant({
+        restaurant_name:userData.restaurantname,
+        restaurant_tele:userData.restauranttele,
+        restaurant_type:userData.TOR,
+        cuisine_type:userData.TOC,
+        address:userData.address,
+        image1:userData.JYH1,
+        image2:userData.JYH2,
+        locate_longitude: userData.locatelongitude,
+        locate_latitude: userData.locatelatitude
+    });
+    console.log(restaurant);
+
+    restaurant.save(function (err, results) {
+                if(err)
+                    res.status(500).send('invalid data');
+
+                res.setHeader('Content-Type', 'application/json');
+        res.status(200).send({value: "True"});
+                //res.send(JSON.stringify(restaurant));
+            });
+
     // try {
     //     var restaurant = new Restaurant({
     //         restaurant_name: userData.restaurantname,
@@ -33,8 +62,8 @@ exports.insert = function (req, res, next) {
     //     });
     //     restaurant.save(function (err, results) {
     //         if (err)
-    //             res.status(500).send('Invalid data!');
-    //         res.send(JSON.stringify({value: "True"}));
+    //              res.status(500).send('Invalid data!');
+    //          res.send(JSON.stringify({value: "True"}));
     //     });
     //
     //     // var location = new Location({
