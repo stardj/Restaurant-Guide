@@ -1,20 +1,21 @@
-function ajaxQuery(url, input) {
-    $.ajax({
-        url: url,
-        data: data,
-        dataType: 'json',
-        type: 'POST',
-        success: function (input) {
-            alert("Successed");
-        },
-        error: function (xhr, status, error) {
-            alert('Error: ' + error.message);
-        }
-    });
-}
 
 $(function () {
-    $('#addTMP').click(function () {
+    function post(url, input) {
+        $.ajax({
+            url: url,
+            data: input,
+            dataType: 'json',
+            type: 'POST',
+            success: function (data) {
+                alert("successed");
+            },
+            error: function (xhr, status, error) {
+                alert('Error: ' + error.message);
+            }
+        });
+    }
+
+    $('#addTMP').click( function () {
 
         var restaurantname = $("#name").val();
         var address = $("#address").val();
@@ -38,7 +39,10 @@ $(function () {
 
         var image1 = $("#frame1").attr('src');
         var image2 = $("#frame2").attr('src');
-
+        var camera1 = document.getElementById('camera1');
+        //var a = camera1.files[0];
+        var file = camera1.files[0];
+        //alert(file);
         var input = {};
         input['restaurantname'] = restaurantname;
         input['address'] = address;
@@ -47,11 +51,11 @@ $(function () {
         input['locatelatitude'] = locatelatitude;
         input['TOC'] = TOC;
         input['TOR'] = TOR;
-        input['image1'] = image1;
+        input['image1'] = file;
         input['image2'] = image2;
-        alert(input.restaurantname);
+        alert(file);
 
-        ajaxQuery(url, input);
-        event.preventDefault();
-    })
+        post('/', input);
+        //event.preventDefault();
+    });
 })

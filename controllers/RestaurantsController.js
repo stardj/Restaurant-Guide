@@ -1,8 +1,12 @@
-var Restaurant = require('../models/RestaurantsModel');
+var Restaurant = require('../models/RestaurantModel');
+var Location = require('../models/LocationModel');
+var multer = require('multer');
+var uploads = multer({dest: 'public/images/'})
+var fs = require('fs');
+var pathLib = require("path");
 
 exports.finding = function (req, res) {
     var userData = req.body;
-
     var testdata = {
         root: [
 
@@ -37,38 +41,45 @@ exports.finding = function (req, res) {
     });
 };
 
-function parser4Json(data) {
 
-}
+exports.insert = function (req, res, next) {
 
-
-exports.insert = function (req, res) {
     var userData = req.body;
+    console.log(userData);
+
     if (userData == null) {
         res.status(403).send('No data sent!')
     }
     try {
         var restaurant = new Restaurant({
-            restaurant_name: userData.restaurantname,   //餐厅名
-            restaurant_tele: userData.restauranttele,   //餐厅电话
-            class_name: userData.classname,             //餐馆类型
-            special_name: userData.specialname,         //菜系
-            locate_longitude: userData.locatelongitude, //经度
-            locate_latitude: userData.locatelatitude,   //纬度
-            post_code: userData.postcode,               //邮编
-            rank_score: userData.rank,                  //评分
-            image1: userData.image1,                    //第一张图
-            image2: userData.image2,                    //第二张图
+            restaurant_name: userData.restaurantname,
+            user_account: userData.useraccount,
+            restaurant_tele: userData.restauranttele,
+            restaurant_type: userData.TOR,
+            cuisine_type: userData.TOC,
+            post_code: userData.address,
+            rank_score: userData.rank,
+            image1: userData.image1,
+            image2: userData.image2,
         });
-        console.log('received: ' + restaurant);
-
         restaurant.save(function (err, results) {
-            console.log(results._id);
             if (err)
                 res.status(500).send('Invalid data!');
 
             res.setHeader('Content-Type', 'application/json');
             res.send(JSON.stringify(restaurant));
+        });
+
+        var location = new Location({
+            restaurant_id: restaurant._id,
+            locate_longitude: userData.locatelongitude,
+            locate_latitude: userData.locatelatitude,
+        });
+
+        location.save(function (err) {
+            if (err)
+                res.status(500).send('Invalid data!');
+
         });
     } catch (e) {
         res.status(500).send('error ' + e);
