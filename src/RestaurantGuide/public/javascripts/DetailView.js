@@ -61,12 +61,12 @@ $(function () {
         var cuisineTypeText = document.createTextNode("Type of cuisine: " + parserTypeofC(data.cuisine_type)); // cuisne type
         var addressText = document.createTextNode("Address: " + data.address);// address
         var telText = document.createTextNode("Tel: " + data.restaurant_tele);// telephone number
-        var postcodeText = document.createTextNode("Postcode: " + data.address);// postcode
+        // var postcodeText = document.createTextNode("Postcode: " + data.address);// postcode
         restaurantTypeNode.appendChild(restaurantTypeText);
         cuisineTypeNode.appendChild(cuisineTypeText);
         addressNode.appendChild(addressText);
         telNode.appendChild(telText);
-        postcodeNode.appendChild(postcodeText);
+        // postcodeNode.appendChild(postcodeText);
         infoNode1.appendChild(restaurantTypeNode);
         infoNode1.appendChild(cuisineTypeNode);
         infoNode1.appendChild(addressNode);
@@ -77,7 +77,7 @@ $(function () {
         var imgInfoNode = document.createElement("DIV");
         var imgInfoBorder = document.createElement("DIV");
         var imgAddr = document.createElement("IMG");
-        imgAddr.setAttribute("src", "images/bg_index.jpg");
+        imgAddr.setAttribute("src", data.image1);
         imgAddr.setAttribute("class", "img-fluid");
         imgInfoBorder.setAttribute("class", "p-2 border w-100");
         imgInfoNode.setAttribute("class", "col-md-6 col-lg-6 column");
@@ -87,7 +87,7 @@ $(function () {
         var imgInfoNode2 = document.createElement("DIV");
         var imgInfoBorder2 = document.createElement("DIV");
         var imgAddr2 = document.createElement("IMG");
-        imgAddr2.setAttribute("src", "images/bg_index.jpg");
+        imgAddr2.setAttribute("src", data.image2);
         imgAddr2.setAttribute("class", "img-fluid");
         imgInfoBorder2.setAttribute("class", "p-2 border w-100");
         imgInfoNode2.setAttribute("class", "col-md-6 col-lg-6 column");

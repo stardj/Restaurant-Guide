@@ -11,18 +11,19 @@ exports.finding = function (req, res) {
     }  else {
         nameSearch(userData, res);
     }
-    // else if (isNotNull(userData.typeOfRestaurant) || isNotNull(userData.typeOfCuisine)) {
-    //     nameAndTypeSearch(userData, res);
-    // }
+
+// else if (isNotNull(userData.typeOfRestaurant) || isNotNull(userData.typeOfCuisine)) {
+//         nameAndTypeSearch(userData, res);
+//     }
+
+
 };
 
 function nameAndTypeSearch(userData, res) {
     Restaurant.find({
-        restaurant_name: {$regex: userData.restaurantname, $options: "$i"},
-        $or: {
-            restaurant_type: {$regex: userData.restauranttype, $options: "$i"},
-            cuisine_type: {$regex: userData.cuisinetype, $options: "$i"}
-        }
+        // restaurant_name: {$regex: userData.restaurantname, $options: "$i"},
+        restaurant_type: {$regex: userData.restauranttype, $options: "$i"},
+        cuisine_type: {$regex: userData.cuisinetype, $options: "$i"}
     }, function (err, restaurant) {
         if (err) {
             res.send('error has occured');

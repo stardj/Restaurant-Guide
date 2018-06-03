@@ -9,7 +9,7 @@ $(function () {
             contentType: false,
             processData: false,
             success: function (data) {
-                if(data.value == "True"){
+                if (data.value == "True") {
                     alert("successed");
                     window.history.back(-1);
                 } else {
@@ -27,8 +27,8 @@ $(function () {
         var restaurantname = $("#name").val();
         var address = $("#address").val();
         var restauranttele = $("#telephone").val();
-        var locatelongitude = $("#lat").val();
-        var locatelatitude = $("#long").val();
+        var locatelongitude = $("#long").val();
+        var locatelatitude = $("#lat").val();
 
         var TOR = "";
         $("input[name='typeOfRestaurant']").each(function () {

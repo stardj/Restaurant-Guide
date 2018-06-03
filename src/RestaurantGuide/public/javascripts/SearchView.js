@@ -32,17 +32,16 @@ function showOfflineWarning() {
 }
 
 function enableSearchBtn() {
-    if (document.getElementById('btn_search').disabled == true){
+    if (document.getElementById('btn_search').disabled == true) {
         document.getElementById('btn_search').disabled = false;
     }
 }
 
 function disableSearchBtn() {
-    if (document.getElementById('btn_search').disabled == false){
+    if (document.getElementById('btn_search').disabled == false) {
         document.getElementById('btn_search').disabled = true;
     }
 }
-
 
 
 function onSubmitSearch(url) {
@@ -77,6 +76,8 @@ function buildDocument(data) {
     // imgval.setAttribute("src", "images/2.jpg");//restaurant img
     imgval.setAttribute("src", data.image2);//restaurant img
     imgval.setAttribute("class", "img-rounded");
+    imgval.setAttribute("width", "150");
+    imgval.setAttribute("height", "150");
     imga.appendChild(imgval);
     imgNode.appendChild(imga);
 
@@ -92,7 +93,12 @@ function buildDocument(data) {
     var infoh5text = document.createTextNode(data.restaurant_name);// restaurant_name
     infoh5.appendChild(infoh5text);
     infoa.appendChild(infoh5);
-    infoimg.setAttribute("src", "images/rank4.jpg");//rank
+    var rankindex = rankIndex = "images/rank" + 4 + ".JPG";
+    if (isNotNull(data.rank_score)) {
+        rankIndex = "images/rank" + data.rank_score + ".JPG";
+    }
+
+    infoimg.setAttribute("src", rankIndex);//rank
     infoimg.setAttribute("class", "img-rounded");
 
     var text1 = document.createTextNode("233333 reviews");// reviews number
@@ -117,6 +123,10 @@ function buildDocument(data) {
     return rootNode;
 }
 
+function isNotNull(data) {
+    return data != null && data != "" && data != undefined ? true : false;
+}
+
 function parserResult(dataR) {
 
     var output = document.createElement("DIV");
@@ -138,7 +148,7 @@ function parserResult(dataR) {
 
     });
 
-    if(output1 != "{"){
+    if (output1 != "{") {
         $("#locationREST").val(output1);
     }
     return output.innerHTML;
