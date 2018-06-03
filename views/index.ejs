@@ -9,15 +9,16 @@
   </head>
   <body>
     <h1><%= title %></h1>
-
-
-    <form id=“xForm" onsubmit="onSubmit('/index')">
-        <p><label for='restaurantname'>Restaurant name:</label>
-        <input type="text" name="restaurantname" id="restaurantname" value="Ma Hua"></p>
-
-        <p><input type="submit" name="g" value="Search" id="g"></p>
-    </form>
-  <div id="results" style="margin-top:30px"></div>
+           <form method = "post", enctype = "multipart/form-data">
+           <p><label for='logo'>Logo:</label>
+                <input type="text" name="logo" id="logo" value="">
+           </p>
+                <input type = "file" name = "myimage" accept="image/png,image/gif,image/jpg,image/jpeg" multiple=true />
+           <p>
+                <input type = "file" name = "myimage2" accept="image/png,image/gif,image/jpg,image/jpeg" multiple=true />
+           </p>
+                <input type = "submit" name = "submit" value = "submit">
+            </form>
 
   </body>
 </html>

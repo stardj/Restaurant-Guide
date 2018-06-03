@@ -1,106 +1,87 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser= require("body-parser");
-var multer = require('multer')
-var upload = multer({dest: 'public/images/'})
-
-var mongoose = require('mongoose');
-var DB = 'mongodb://localhost/restaurants';
-var Restaurant = require('../models/restaurants');
+var multer = require('multer');
+var uploads = multer({dest: 'public/images/'})
+var fs = require('fs');
+var pathLib = require("path");
+//var Adddata = require("../routes/test");
 var restaurant = require('../controllers/restaurants');
 var initDB= require('../controllers/init');
 initDB.init();
 
-mongoose.connect(DB);
-//11111
+
 /* GET home page. */
-router.get('/index', function(req, res, next) {
-     res.render('index', { title: 'Express' });
-    // if(req.query.search){
-    //     const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-    //     Restaurant.find({name: regex}, function (err, restaurants) {
-    //         if (err) {
-                res.send('error has occured');
-    //         } else {
-    //             //res.render('/index', {DB:restaurants});
-    //             console.log(restaurants);
-    //             res.json(restaurants);
-    //         }
-    //     });
-    // }else {
-    //    // const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-
-        //下面是多项checkbox查询
-        // Restaurant.find({$or:[{class_name:"Chinese"},{special_name:"Curry"},{post_code:"S3 7HB"}]}, function (err, restaurants) {
-        //     if (err) {
-        //         res.send('error has occured');
-        //     } else {
-        //         console.log(restaurants);
-        //         res.json(restaurants);
-        //     }
-        // });
-        //
-        // //下面是模糊查询，和上面冲突，分别调用
-        // Restaurant.find({class_name:{$regex:"chi",$options:"$i"}}, function (err, restaurants) {
-        //     if (err) {
-        //         res.send('error has occured');
-        //     } else {
-        //         console.log(restaurants);
-        //         res.json(restaurants);
-        //     }
-        // });
-
-    // }
-    // if(req.query.search){
-    //     Restaurant.find({}, function (err, allRestaurants) {
-    //         if (err) {
-    //             console.log(err);
-    //         } else {
-    //             res.render("/index", {restaurants: allRestaurants});
-    //         }
-    //
-    //     });
-    //
-    // }else {
-    //
-    //     Restaurant.find({}, function (err, allRestaurants) {
-    //         if (err) {
-    //             console.log(err);
-    //         } else {
-    //             res.render("/index", {restaurants: allRestaurants});
-    //         }
-    //
-    //     });
-    // }
+router.get('/index', function(req, res) {
+    //res.render('Adddata')
+  res.render('index', { title: 'Restaurant Guide Search' });
 });
 
-router.post('/index', restaurant.finding);
-// router.post('/index', function (req, res, next){
-//     Restaurant.find({})
-//         .exec(function (err, Restaurant) {
-//             if
-//         })
+router.post('/index', uploads.any(), function (req, res){
+        var userData = req.body;
+        if (userData == null) {
+            res.status(403).send('No data sent!')
+        }
+        uploads.keepExtensions = true;
+
+        var newName = req.files[0].destination + req.files[0].filename + pathLib.parse(req.files[0].originalname).ext;
+        var newName2 = req.files[1].destination + req.files[1].filename + pathLib.parse(req.files[1].originalname).ext;
+        // fs.rename(req.files[0].path, newName);
+        // fs.rename(req.files[1].path, newName2);
+
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(userData));
+        fs.rename(req.files[0].path, newName, function(err){
+            if (err)
+                res.send("upload err");
+            else
+                var image = new Image({
+                    data1:userData.logo,
+                    logo_image:newName,
+                    logo_image2:newName2,
+                });
+            image.save(function (err, info) {
+                console.log(info);
+                if (err)
+                    res.status(500).send('Invalid data!');
+                res.setHeader('Content-Type', 'application/json');
+                res.send(JSON.stringify(image));
+            });
+        });
+});
+
+//下面是原版insert
+/* GET home page. */
+// router.get('/insert', function(req, res, next) {
+//   res.render('insert', { title: 'Restaurant Guide Insert' });
 // });
+//
+// router.post('/insert', image.insert);
 
 
-/* GET home page. */
-router.get('/insert', function(req, res, next) {
-  res.render('insert', { title: 'Restaurant Guide Insert' });
-});
+// router.get('/load', function(req, res, next) {
+//     res.render('load', { title: 'Load!' });
+// });
+//
+// router.post('/load', images.load);
 
-router.post('/insert', restaurant.insert);
 
-/* GET home page. */
-// router.get('/index', function(req, res, next) {
+
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
 //     res.render('index', { title: 'Express' });
 // });
 //
-// router.post('/index', upload.any(),function (req, res, next) {
+// router.post('/', upload.any(),function (req, res, next) {
 //     res,send(req.files);
 // });
 
-function escapeRegex(text){
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-};
+router.get('/delete', function(req, res, next) {
+    res.render('delete', { title: 'Restaurant Guide Delete' });
+});
+
+router.post('/delete', restaurant.delete);
+
+
 
 module.exports = router;
