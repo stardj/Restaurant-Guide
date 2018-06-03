@@ -21,6 +21,14 @@ $(function () {
 
     function buildDocument(data) {
 
+        var tmp = "";
+        tmp += data.restaurant_name + ",";
+        tmp += data.locate_latitude + ",";
+        tmp += data.locate_longitude + ",";
+        tmp += 1 + ",";
+
+        $("#locationDetail").val(tmp);
+
         var rootNode = {};
 
         var nameNode = document.createElement("DIV");

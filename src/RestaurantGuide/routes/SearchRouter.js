@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require("body-parser");
+var initDB= require('../controllers/init');
+initDB.init();
 
 
 var searchController = require('../controllers/SearchController');

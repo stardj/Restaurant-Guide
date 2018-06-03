@@ -108,6 +108,11 @@ $(function(){
         var locations = [
             ['Firepit', 53.381021, -1.476363, 1]
         ];
+
+        var locations1 = $("#locationDetail").val();
+        var tmp = locations1.split(',');
+        // var tmp = tmp[i].split(',');
+
         var markers = [];
         var map = new google.maps.Map(document.getElementById("map"), {
             zoom: 12,
@@ -117,20 +122,34 @@ $(function(){
 
         var mapInfoWindow = new google.maps.InfoWindow;
         var marker, i;
+        // for (i = 0; i < locations.length; i++) {
+        //     marker = new google.maps.Marker({
+        //         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        //         map: map,
+        //         label: String(locations[i][3])
+        //     });
+        //     markers.push(marker);
+        //     google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        //         return function () {
+        //             mapInfoWindow.setContent(locations[i][0]);
+        //             mapInfoWindow.open(map, marker);
+        //         }
+        //     })(marker, i));
+        // }
         for (i = 0; i < locations.length; i++) {
             marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                position: new google.maps.LatLng(tmp[1], tmp[2]),
                 map: map,
-                label: String(locations[i][3])
+                label: String(tmp[3])
             });
             markers.push(marker);
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
                 return function () {
-                    mapInfoWindow.setContent(locations[i][0]);
+                    mapInfoWindow.setContent(tmp[0]);
                     mapInfoWindow.open(map, marker);
                 }
             })(marker, i));
-        }		
+        }
 
     }
 
