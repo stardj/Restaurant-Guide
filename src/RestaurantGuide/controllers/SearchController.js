@@ -8,11 +8,12 @@ exports.finding = function (req, res) {
 
     if (!(isNotNull(userData.locate_latitude) && isNotNull(userData.locate_longitude))) {
         onlyNameSearch(userData, res);
-    } else if (isNotNull(userData.typeOfRestaurant) || isNotNull(userData.typeOfCuisine)) {
-        nameAndTypeSearch(userData, res);
-    } else {
+    }  else {
         nameSearch(userData, res);
     }
+    // else if (isNotNull(userData.typeOfRestaurant) || isNotNull(userData.typeOfCuisine)) {
+    //     nameAndTypeSearch(userData, res);
+    // }
 };
 
 function nameAndTypeSearch(userData, res) {

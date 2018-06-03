@@ -46,9 +46,6 @@ $(function () {
 
         var camera1 = document.getElementById("camera1").files[0];
         var camera2 = document.getElementById("camera2").files[0];
-        // if(camera1==undefined){
-        //     camera1 =
-        // }
         var formData = new FormData();
         formData.append("JYH1", camera1);
         formData.append("JYH2", camera2);
