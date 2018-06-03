@@ -74,7 +74,8 @@ function buildDocument(data) {
     var imga = document.createElement("A");
     var imgval = document.createElement("IMG");
     imga.setAttribute("href", "detail?" + data._id + "");
-    imgval.setAttribute("src", "images/2.jpg");//restaurant img
+    // imgval.setAttribute("src", "images/2.jpg");//restaurant img
+    imgval.setAttribute("src", data.image2);//restaurant img
     imgval.setAttribute("class", "img-rounded");
     imga.appendChild(imgval);
     imgNode.appendChild(imga);

@@ -59,9 +59,9 @@ $(function () {
         var postcodeNode = document.createElement("P");
         var restaurantTypeText = document.createTextNode("Type of restaurant: " + parserTypeofR(data.restaurant_type)); // resturant type
         var cuisineTypeText = document.createTextNode("Type of cuisine: " + parserTypeofC(data.cuisine_type)); // cuisne type
-        var addressText = document.createTextNode("Address: " + data.post_code);// address
+        var addressText = document.createTextNode("Address: " + data.address);// address
         var telText = document.createTextNode("Tel: " + data.restaurant_tele);// telephone number
-        var postcodeText = document.createTextNode("Postcode: " + data.post_code);// postcode
+        var postcodeText = document.createTextNode("Postcode: " + data.address);// postcode
         restaurantTypeNode.appendChild(restaurantTypeText);
         cuisineTypeNode.appendChild(cuisineTypeText);
         addressNode.appendChild(addressText);

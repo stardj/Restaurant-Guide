@@ -28,7 +28,7 @@ function nameAndTypeSearch(userData, res) {
         } else {
             console.log("#########");
             restaurant.forEach(function (restaurant) {
-                console.log(restaurant.post_code);
+                console.log(restaurant.address);
             });
             console.log("#########");
             res.setHeader('Content-Type', 'application/json');
