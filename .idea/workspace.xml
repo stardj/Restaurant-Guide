@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6cd01498-65f6-4bdb-8a74-c776382218c7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/controllers/RestaturantController.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/controllers/SearchController.js" afterPath="$PROJECT_DIR$/src/RestaurantGuide/controllers/SearchController.js" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/models/LocationModel.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/AddView.js" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/AddView.js" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js" afterPath="$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js" />
-    </list>
+    <list default="true" id="6cd01498-65f6-4bdb-8a74-c776382218c7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/SearchView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
+              <caret line="73" column="43" lean-forward="false" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
               <folding>
                 <marker date="1528004217053" expanded="true" signature="30:1114" ph="{...}" />
               </folding>
@@ -57,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/AddView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="412">
-              <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+              <caret line="42" column="41" lean-forward="false" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -67,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/controllers/SearchController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="472">
-              <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+              <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -77,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/DetailView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="106">
-              <caret line="69" column="50" lean-forward="true" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
+              <caret line="69" column="50" lean-forward="false" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
               <folding>
                 <element signature="e#5115#5649#0" expanded="false" />
                 <element signature="e#5684#6204#0" expanded="false" />
@@ -91,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/models/RestaurantModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+              <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -506,12 +499,12 @@
       <workItem from="1524657092573" duration="166000" />
       <workItem from="1527197565633" duration="10218000" />
       <workItem from="1527367407035" duration="117580000" />
-      <workItem from="1527941209740" duration="56352000" />
+      <workItem from="1527941209740" duration="56492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192350000" />
+    <option name="totallyTimeSpent" value="192490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1676" height="1027" extended-state="0" />
@@ -781,7 +774,7 @@
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/DetailView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
-          <caret line="69" column="50" lean-forward="true" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
+          <caret line="69" column="50" lean-forward="false" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
           <folding>
             <element signature="e#5115#5649#0" expanded="false" />
             <element signature="e#5684#6204#0" expanded="false" />
@@ -837,7 +830,7 @@
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/models/RestaurantModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="52" lean-forward="true" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -869,7 +862,7 @@
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/SearchView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
+          <caret line="73" column="43" lean-forward="false" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
           <folding>
             <marker date="1528004217053" expanded="true" signature="30:1114" ph="{...}" />
           </folding>
@@ -879,7 +872,7 @@
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/AddView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
-          <caret line="42" column="41" lean-forward="true" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+          <caret line="42" column="41" lean-forward="false" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -887,7 +880,7 @@
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/controllers/SearchController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
-          <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+          <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
           <folding />
         </state>
       </provider>
