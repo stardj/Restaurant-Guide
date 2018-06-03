@@ -6,8 +6,8 @@ var multer = require('multer');
 const path = require('path');
 // var Restaurant = require('../controllers/RestaturantController');
 var Restaurant = require('../models/RestaurantModel');
-var indexTmp = 1;
-var timeIndex = Date.now();
+var indexTmp = 0;
+// var timeIndex = Date.now();
 var nameIndex = {};
 
 const storage = multer.diskStorage({
@@ -15,8 +15,9 @@ const storage = multer.diskStorage({
         cb(null, path.resolve('../public/images'));
     },
     filename: function (req, file, cb) {
-        nameIndex[indexTmp] = timeIndex + "_" + indexTmp + path.extname(file.originalname);
-        cb(null, (nameIndex[indexTmp++]));
+        var tmpVal = indexTmp++ % 2;
+        nameIndex[tmpVal] = Date.now() + "_" + tmpVal + path.extname(file.originalname);
+        cb(null, (nameIndex[tmpVal]));
     }
 });
 
@@ -41,8 +42,8 @@ router.post('/', upload.any(), function (req, res, next) {
         restaurant_type: userData.TOR,
         cuisine_type: userData.TOC,
         address: userData.address,
-        image1: pathIndex+nameIndex["1"],
-        image2: pathIndex+nameIndex["2"],
+        image1: pathIndex+nameIndex["0"],
+        image2: pathIndex+nameIndex["1"],
         locate_longitude: userData.locatelongitude,
         locate_latitude: userData.locatelatitude
     });

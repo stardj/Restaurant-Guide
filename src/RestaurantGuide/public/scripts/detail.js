@@ -43,6 +43,7 @@ $(function(){
 	// $('#btnClearPhoto').click(function(e) {
 	// 	$('#info').text('No photo captured.');
 	// 	$('#snapshot').css('display','none');
+
 	// 	$('#player').css('display','none');
 	// });
 		

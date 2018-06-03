@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cd01498-65f6-4bdb-8a74-c776382218c7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/controllers/init.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Forge Bakehouse.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Forge Bakehouse2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Kias Pastaria.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Kias Pastaria2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Las Iguanas.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Las Iguanas2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Noodlesta.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Noodlesta2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/StarBucks2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/Starbucks.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/firepit.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/firepit2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/images/image.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/public/images/1528041906143_1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/public/images/1528041906143_2.JPG" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/DetailView.js" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/DetailView.js" />
       <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/public/scripts/detail.js" afterPath="$PROJECT_DIR$/src/RestaurantGuide/public/scripts/detail.js" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/routes/SearchRouter.js" afterPath="$PROJECT_DIR$/src/RestaurantGuide/routes/SearchRouter.js" />
-      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/views/detail.ejs" afterPath="$PROJECT_DIR$/src/RestaurantGuide/views/detail.ejs" />
+      <change beforePath="$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js" afterPath="$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +31,8 @@
       <file leaf-file-name="detail.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/views/detail.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="157" column="34" lean-forward="true" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+            <state relative-caret-position="2826">
+              <caret line="157" column="34" lean-forward="false" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -59,7 +41,7 @@
       <file leaf-file-name="SearchView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/SearchView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
+            <state relative-caret-position="2718">
               <caret line="151" column="8" lean-forward="false" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="40" />
               <folding>
                 <marker date="1528042417920" expanded="true" signature="30:1114" ph="{...}" />
@@ -71,8 +53,8 @@
       <file leaf-file-name="search.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/views/search.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="306" column="36" lean-forward="true" selection-start-line="306" selection-start-column="36" selection-end-line="306" selection-end-column="36" />
+            <state relative-caret-position="5508">
+              <caret line="306" column="36" lean-forward="false" selection-start-line="306" selection-start-column="36" selection-end-line="306" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -81,8 +63,8 @@
       <file leaf-file-name="DetailView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/DetailView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+            <state relative-caret-position="522">
+              <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
               <folding>
                 <element signature="e#5318#5852#0" expanded="false" />
                 <element signature="e#5887#6407#0" expanded="false" />
@@ -92,11 +74,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/scripts/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2216">
-              <caret line="145" column="57" lean-forward="true" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="57" />
+            <state relative-caret-position="918">
+              <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/AddView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddRouter.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -105,28 +107,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/scripts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="123" column="32" lean-forward="true" selection-start-line="123" selection-start-column="32" selection-end-line="123" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/views/register.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/views/add.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+            <state relative-caret-position="2214">
+              <caret line="123" column="32" lean-forward="false" selection-start-line="123" selection-start-column="32" selection-end-line="123" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -135,8 +117,8 @@
       <file leaf-file-name="init.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/controllers/init.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="98" column="46" lean-forward="true" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+            <state relative-caret-position="1764">
+              <caret line="98" column="46" lean-forward="false" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -250,7 +232,6 @@
         <option value="$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/RegisterView.js" />
         <option value="$PROJECT_DIR$/src/RestaurantGuide/controllers/RestaturantController.js" />
         <option value="$PROJECT_DIR$/src/RestaurantGuide/controllers/SearchController.js" />
-        <option value="$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js" />
         <option value="$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/AddView.js" />
         <option value="$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/SearchView.js" />
         <option value="$PROJECT_DIR$/src/RestaurantGuide/views/search.ejs" />
@@ -262,6 +243,7 @@
         <option value="$PROJECT_DIR$/src/RestaurantGuide/views/detail.ejs" />
         <option value="$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/DetailView.js" />
         <option value="$PROJECT_DIR$/src/RestaurantGuide/public/scripts/detail.js" />
+        <option value="$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js" />
       </list>
     </option>
   </component>
@@ -328,8 +310,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -375,36 +355,15 @@
               <item name="Restaurant-Guide" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="RestaurantGuide" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Restaurant-Guide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Restaurant-Guide" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="RestaurantGuide" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Restaurant-Guide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Restaurant-Guide" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="RestaurantGuide" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Restaurant-Guide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Restaurant-Guide" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="RestaurantGuide" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -548,12 +507,13 @@
       <workItem from="1524657092573" duration="166000" />
       <workItem from="1527197565633" duration="10218000" />
       <workItem from="1527367407035" duration="117580000" />
-      <workItem from="1527941209740" duration="61906000" />
+      <workItem from="1527941209740" duration="62307000" />
+      <workItem from="1528049349183" duration="1236000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197904000" />
+    <option name="totallyTimeSpent" value="199541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1676" height="1027" extended-state="0" />
@@ -571,9 +531,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22660099" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22967981" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294335" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -586,6 +545,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,61 +565,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/bin/public/images/1527989975233.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527990204148.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993484843.JPG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993589661.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993589665.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993793609.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993892624.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 04:30:02_2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 04:28:52_1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 04:30:02_3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 04:40:12_4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/bin/public/images/1527989975233.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527990204148.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993484843.JPG" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993589661.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993589665.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993793609.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/1527993892624.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 04:30:02_2.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 04:28:52_1.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 04:30:02_3.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 04:40:12_4.jpg" />
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/rank3.JPG">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -684,7 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -692,7 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-79">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,9 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="50" />
-          <folding>
-            <element signature="e#52#92#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -734,51 +644,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 06:30:25_1.JPG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 06:30:25_2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 06:31:16_3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 06:31:16_4.JPG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/controllers/RestaturantController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/models/LocationModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 06:30:25_1.JPG" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 06:30:25_2.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 06:31:16_3.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/images/2018-6-3 06:31:16_4.JPG" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/controllers/RestaturantController.js" />
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/models/LocationModel.js" />
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/models/ReviewModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -786,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -794,23 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="46" column="43" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/AddView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,7 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,7 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,7 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="49" column="88" lean-forward="false" selection-start-line="49" selection-start-column="88" selection-end-line="49" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,7 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -893,16 +747,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/controllers/init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="98" column="46" lean-forward="true" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+        <state relative-caret-position="1764">
+          <caret line="98" column="46" lean-forward="false" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/views/search.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="306" column="36" lean-forward="true" selection-start-line="306" selection-start-column="36" selection-end-line="306" selection-end-column="36" />
+        <state relative-caret-position="5508">
+          <caret line="306" column="36" lean-forward="false" selection-start-line="306" selection-start-column="36" selection-end-line="306" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -917,7 +771,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/SearchView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
+        <state relative-caret-position="2718">
           <caret line="151" column="8" lean-forward="false" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="40" />
           <folding>
             <marker date="1528042417920" expanded="true" signature="30:1114" ph="{...}" />
@@ -927,24 +781,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/scripts/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="123" column="32" lean-forward="true" selection-start-line="123" selection-start-column="32" selection-end-line="123" selection-end-column="32" />
+        <state relative-caret-position="2214">
+          <caret line="123" column="32" lean-forward="false" selection-start-line="123" selection-start-column="32" selection-end-line="123" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/views/detail.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="157" column="34" lean-forward="true" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+        <state relative-caret-position="2826">
+          <caret line="157" column="34" lean-forward="false" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/DetailView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+        <state relative-caret-position="522">
+          <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding>
             <element signature="e#5318#5852#0" expanded="false" />
             <element signature="e#5887#6407#0" expanded="false" />
@@ -955,8 +809,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/scripts/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2216">
-          <caret line="145" column="57" lean-forward="true" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="57" />
+        <state relative-caret-position="918">
+          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/public/javascripts/AddView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestaurantGuide/routes/AddRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding />
         </state>
       </provider>
