@@ -9,9 +9,11 @@ function ajaxQuery(url, data) {
             // parserResult(dataR);
             storeCachedData('rest_search', dataR);
             hindOfflineWarning();
+            enableSearchBtn();
         },
         error: function (xhr, status, error) {
             showOfflineWarning();
+            disableSearchBtn();
             //getCachedData("rest_search", new Date().getTime());
             document.getElementById("SearchResult").innerHTML = parserResult(getCachedData("rest_search", new Date().getTime()));
             alert('Error: ' + error.message);
@@ -28,6 +30,20 @@ function showOfflineWarning() {
     if (document.getElementById('offline_div') != null)
         document.getElementById('offline_div').style.display = 'block';
 }
+
+function enableSearchBtn() {
+    if (document.getElementById('btn_search').disabled == true){
+        document.getElementById('btn_search').disabled = false;
+    }
+}
+
+function disableSearchBtn() {
+    if (document.getElementById('btn_search').disabled == false){
+        document.getElementById('btn_search').disabled = true;
+    }
+}
+
+
 
 function onSubmitSearch(url) {
     var formArray = $("form").serializeArray();

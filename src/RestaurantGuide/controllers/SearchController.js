@@ -1,12 +1,14 @@
 var Restaurant = require('../models/RestaurantModel');
-var Location = require('../models/LocationModel');
+// var Location = require('../models/LocationModel');
 var mongoose = require('mongoose');
 
 exports.finding = function (req, res) {
     var userData = req.body;
     console.log(userData);
 
-    if (isNotNull(userData.typeOfRestaurant) || isNotNull(userData.typeOfCuisine)) {
+    if (!(isNotNull(userData.locate_latitude) && isNotNull(userData.locate_longitude))) {
+        onlyNameSearch(userData, res);
+    } else if (isNotNull(userData.typeOfRestaurant) || isNotNull(userData.typeOfCuisine)) {
         nameAndTypeSearch(userData, res);
     } else {
         nameSearch(userData, res);

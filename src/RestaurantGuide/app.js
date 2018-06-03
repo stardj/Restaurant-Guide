@@ -12,8 +12,10 @@ var detail = require('./routes/DetailRouter');
 var register = require('./routes/RegisterRouter');
 var search = require('./routes/SearchRouter');
 var iMap = require('./routes/MapRouter');
+var add = require('./routes/AddRouter');
 
 var app = express();
+// app.use(express.static('./public'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', search);
 app.use('/detail', detail);
-// app.use('/users', users);
+app.use('/add', add);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/map', iMap);
